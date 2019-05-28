@@ -1,0 +1,33 @@
+﻿@model SZZP2._2.Models.Office
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<h2>Usuwanie biura</h2>
+
+<h3>Uwaga! Masz zamiar usunąć trwale biuro z bazy danych</h3>
+<div>
+
+    <hr />
+    <dl class="dl-horizontal">
+        <dt style="text-align:left">
+            @Html.DisplayNameFor(model => model.NameOffice)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.NameOffice)
+        </dd>
+        <dt style="text-align:left">
+            @Html.DisplayNameFor(model => model.SymbolOffice)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.SymbolOffice)
+        </dd>
+    </dl>
+    
+    <form asp-action="Delete">
+        <input type="hidden" asp-for="IDOffice" />
+        <input type="submit" value="Usuń" class="btn btn-danger" /> |
+        <a asp-action="Index" class="btn btn-primary">Powrót do listy</a>
+    </form>
+</div>

@@ -1,0 +1,74 @@
+﻿@model SZZP2._2.Models.Employment
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h2>Edycja zatrudnienia</h2>
+
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="IDEmployment" />
+            <div class="form-group">
+                <label asp-for="Name" class="control-label"></label>
+                <input asp-for="Name" class="form-control" />
+                <span asp-validation-for="Name" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Surname" class="control-label"></label>
+                <input asp-for="Surname" class="form-control" />
+                <span asp-validation-for="Surname" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="NrSap" class="control-label"></label>
+                <input asp-for="NrSap" class="form-control" />
+                <span asp-validation-for="NrSap" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DateEmployment" class="control-label"></label>
+                <input asp-for="DateEmployment" class="form-control" />
+                <span asp-validation-for="DateEmployment" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="EndContract" class="control-label"></label>
+                <input asp-for="EndContract" class="form-control" />
+                <span asp-validation-for="EndContract" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="IDOffice" class="control-label"></label>
+                <select asp-for="IDOffice" class="form-control" asp-items="ViewBag.IDOffice"></select>
+            </div>
+            @*<div class="form-group">
+                <label asp-for="OfficeSymbol" class="control-label"></label>
+                <input asp-for="OfficeSymbol" class="form-control" />
+                <span asp-validation-for="OfficeSymbol" class="text-danger"></span>
+            </div>*@
+            <div class="form-group">
+                <label asp-for="IDDepartment" class="control-label"></label>
+                <select asp-for="IDDepartment" class="form-control" asp-items="ViewBag.IDDepartment"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="IDPosition" class="control-label"></label>
+                <select asp-for="IDPosition" class="form-control" asp-items="ViewBag.IDPosition"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="IDStatus" class="control-label"></label>
+                <select asp-for="IDStatus" class="form-control" asp-items="ViewBag.IDStatus"></select>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Zapisz" class="btn btn-success" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index" class="btn btn-primary">Powrót do listy</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
