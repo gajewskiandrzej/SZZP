@@ -1,6 +1,8 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
+using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using SZZP2._2.Data;
@@ -62,14 +64,22 @@ namespace SZZP2._2.Controllers
         // GET: Employments/Create
         public IActionResult Create()
         {
-            PopulateOfficesDropDownList();
+            List<Office> officessList = new List<Office>();
+
+            //Getting Data form Database Using EntityFrameworkCore
+            officessList = (from office in _context.Offices
+                           select office).ToList();
+
+            //Inserting Select Item in List
+            officessList.Insert(0, new Office { IDOffice = 0, NameOffice = "Wybierz biuro" });
+
+            //Assigning officessList to ViewBag.ListofOffice
+
+            ViewBag.ListofOffice = officessList;
+
             PopulateStatusesDropDownList();
             PopulatePositionsDropDownList();
-            PopulateDepartmentsDropDownList();
-            
-            
-            
-            //ViewData["IDOffice"] = new SelectList(_context.Offices, "IDOffice", "IDOffice");
+
             return View();
         }
 
@@ -78,18 +88,32 @@ namespace SZZP2._2.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("IDEmployment,Name,Surname,NrSap,DateEmployment,EndContract,IDOffice,OfficeSymbol,IDDepartment,IDPosition,IDStatus")] Employment employment)
+        public async Task<IActionResult> Create([Bind("IDEmployment,Name,Surname,NrSap,DateEmployment,EndContract,IDOffice,OfficeSymbol,IDDepartment,IDPosition,IDStatus")] Employment employment, FormCollection formCollection)
         {
+            //Validation
             if (ModelState.IsValid)
             {
                 _context.Add(employment);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            PopulateOfficesDropDownList(employment.IDOffice);
+
+            //Getting selected Value
+            var IDDepartment = HttpContext.Request.Form["IDDepartment"].ToString();
+
+            //Setting Data back to ViewvBag after Posting Form
+            List<Office> officessList = new List<Office>();
+            officessList = (from office in _context.Offices
+                           select office).ToList();
+            officessList.Insert(0, new Office { IDOffice = 0, NameOffice = "Wybierz biuro" });
+
+            //Assigning officessList to ViewBag.ListofOffice
+            ViewBag.ListofOffice = officessList;
+
             PopulateStatusesDropDownList(employment.IDStatus);
             PopulatePositionsDropDownList(employment.IDPosition);
-            PopulateDepartmentsDropDownList(employment.IDDepartment);
+            //PopulateDepartmentsDropDownList(employment.IDDepartment);
+            //PopulateOfficesDropDownList(employment.IDOffice);
             //ViewData["IDOffice"] = new SelectList(_context.Offices, "IDOffice", "IDOffice", employment.IDOffice);
             return View(employment);
         }
@@ -97,10 +121,11 @@ namespace SZZP2._2.Controllers
         // GET: Employments/Edit/5
         public async Task<IActionResult> Edit(int? id)
         {
-            PopulateOfficesDropDownList();
+
             PopulateStatusesDropDownList();
             PopulatePositionsDropDownList();
-            PopulateDepartmentsDropDownList();
+            //PopulateDepartmentsDropDownList();
+            //PopulateOfficesDropDownList();
 
             //if (id == null)
             //{
@@ -150,10 +175,11 @@ namespace SZZP2._2.Controllers
             }
             //ViewData["IDOffice"] = new SelectList(_context.Offices, "IDOffice", "IDOffice", employment.IDOffice);
 
-            PopulateOfficesDropDownList(employment.IDOffice);
+
             PopulateStatusesDropDownList(employment.IDStatus);
             PopulatePositionsDropDownList(employment.IDPosition);
-            PopulateDepartmentsDropDownList(employment.IDDepartment);
+            //PopulateDepartmentsDropDownList(employment.IDDepartment);
+            //PopulateOfficesDropDownList(employment.IDOffice);
 
             return View(employment);
         }
@@ -196,13 +222,7 @@ namespace SZZP2._2.Controllers
             return _context.Employments.Any(e => e.IDEmployment == id);
         }
 
-        private void PopulateOfficesDropDownList(object selectedOffice = null)
-        {
-            var officesQuery = from d in _context.Offices
-                               orderby d.NameOffice
-                               select d;
-            ViewBag.IDOffice = new SelectList(officesQuery.AsNoTracking(), "IDOffice", "NameOffice", selectedOffice);
-        }
+
 
         private void PopulateStatusesDropDownList(object selectedStatus = null)
         {
@@ -220,20 +240,39 @@ namespace SZZP2._2.Controllers
             ViewBag.IDPosition = new SelectList(positionsQuery.AsNoTracking(), "IDPosition", "NamePosition", selectedPosition);
         }
 
-        private void PopulateDepartmentsDropDownList(object selectedDepartment = null)
+        public JsonResult GetDepartment (int IDOffice)
         {
-            var departmentsQuery = from d in _context.Departments
-                                   orderby d.NameDepartment
-                                   select d;
-            ViewBag.IDDepartment = new SelectList(departmentsQuery.AsNoTracking(), "IDDepartment", "NameDepartment", selectedDepartment);
+            List<Department> departmentsList = new List<Department>();
+
+            //Getting Data from Database Using EntityFramework
+            departmentsList = (from department in _context.Departments
+                              where department.IDOffice == IDOffice
+                              select department).ToList();
+
+            //Inserting Select Item in List
+            departmentsList.Insert(0, new Department { IDDepartment = 0, NameDepartment = "Wybierz wydział" });
+
+            return Json(new SelectList(departmentsList, "IDDepartment", "DepartmentName"));
+
         }
 
-        private void GetDepartmentName(int idOffice)
-        {
-            var departmentNameQuery = from d in _context.Departments
-                                      where d.IDOffice == idOffice
-                                      select d.NameDepartment;
-            ViewBag.NameDepartment = departmentNameQuery;
-        }
     }
 }
+
+
+//private void PopulateOfficesDropDownList(object selectedOffice = null)
+//{
+//    var officesQuery = from d in _context.Offices
+//                       orderby d.NameOffice
+//                       select d;
+//    ViewBag.IDOffice = new SelectList(officesQuery.AsNoTracking(), "IDOffice", "NameOffice", selectedOffice);
+//}
+
+//private void PopulateDepartmentsDropDownList(object selectedDepartment = null)
+//{
+//    var departmentsQuery = from d in _context.Departments
+//                           orderby d.NameDepartment
+//                           select d;
+//    ViewBag.IDDepartment = new SelectList(departmentsQuery.AsNoTracking(), "IDDepartment", "NameDepartment", selectedDepartment);
+//}
+
