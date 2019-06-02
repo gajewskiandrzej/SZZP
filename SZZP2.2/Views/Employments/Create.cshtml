@@ -1,30 +1,8 @@
 ﻿@model SZZP2._2.Models.Employment
 @{
-    <script src="~/lib/jquery/dist/jquery.js"></script>
 
-    <script type="text/javascript">
-        $(document).ready(function () {
-            var items = "<option value='0'>Wybierz wydział</option>";
-            $('#IDDepartment').html(items);
-        });
-    </script>
 
-    <script type="text/javascript">
-    $(document).ready(function () {
-        $('#IDOffice').change(function () {
-            var url = '@Url.Content("~/")' + "Employments/GetDepartment";
-            var ddlsource = "#IDOffice";
-                $.getJSON(url, { id: $(ddlsource).val() }, function (data) {
-                    var items = '';
-                    $("#IDDepartment").empty();
-                    $.each(data, function (i, department) {
-                        items += "<option value='" + department.value + "'>" + department.text + "</option>";
-                    });
-                    $('#IDDepartment').html(items);
-                });
-        });
-    });
-    </script>
+
 
 }
 <!--ViewData["Title"] = "Create";-->
@@ -97,6 +75,33 @@
 
 
 @section Scripts {
+    <script src="~/lib/jquery/dist/jquery.js"></script>
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+            var items = "<option value='0'>Wybierz wydział</option>";
+            $("#IDDepartment").html(items);
+        });
+
+
+        $("#IDOffice").change(function () {
+            var url = '@Url.Action("GetDepartment", "Employments")';
+            var id = $(this).val();
+
+            $.getJSON(url, { IDOffice: id }, function (response) {
+                $("#IDDepartment").empty();
+                $.each(response, function (index, dep) {
+                    $("#IDDepartment")
+                        .append($("<option></option>")
+                            .text(dep.nameDepartment)
+                            .val(dep.idDepartment));
+                }
+                );
+            });
+        });
+
+    </script>
+
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
 }
 
@@ -106,3 +111,20 @@
         <input asp-for="OfficeSymbol" class="form-control" />
         <span asp-validation-for="OfficeSymbol" class="text-danger"></span>
     </div>*@
+
+@*<script type="text/javascript">
+    $(document).ready(function () {
+        $('#IDOffice').change(function () {
+            var url = '@Url.Content("~/")' + "Employments/GetDepartment";
+            var ddlsource = "#IDOffice";
+                $.getJSON(url, { id: $(ddlsource).val() }, function (data) {
+                    var items = '';
+                    $("#IDDepartment").empty();
+                    $.each(data, function (i, department) {
+                        items += "<option value='" + department.value + "'>" + department.text + "</option>";
+                    });
+                    $('#IDDepartment').html(items);
+                });
+        });
+    });
+    </script>*@

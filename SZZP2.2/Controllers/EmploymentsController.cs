@@ -88,7 +88,7 @@ namespace SZZP2._2.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("IDEmployment,Name,Surname,NrSap,DateEmployment,EndContract,IDOffice,OfficeSymbol,IDDepartment,IDPosition,IDStatus")] Employment employment, FormCollection formCollection)
+        public async Task<IActionResult> Create([Bind("IDEmployment,Name,Surname,NrSap,DateEmployment,EndContract,IDOffice,OfficeSymbol,IDDepartment,IDPosition,IDStatus")] Employment employment)
         {
             //Validation
             if (ModelState.IsValid)
@@ -240,7 +240,7 @@ namespace SZZP2._2.Controllers
             ViewBag.IDPosition = new SelectList(positionsQuery.AsNoTracking(), "IDPosition", "NamePosition", selectedPosition);
         }
 
-        public JsonResult GetDepartment (int IDOffice)
+        public IActionResult GetDepartment (int IDOffice)
         {
             List<Department> departmentsList = new List<Department>();
 
@@ -251,9 +251,8 @@ namespace SZZP2._2.Controllers
 
             //Inserting Select Item in List
             departmentsList.Insert(0, new Department { IDDepartment = 0, NameDepartment = "Wybierz wydział" });
-
-            return Json(new SelectList(departmentsList, "IDDepartment", "DepartmentName"));
-
+            
+            return Json(departmentsList);
         }
 
     }

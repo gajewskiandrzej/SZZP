@@ -1,102 +1,51 @@
-C:\Users\andrzej.gajewski\source\repos\SZZP2.2\SZZP2.2\bin\Debug\netcoreapp2.2\SZZP2.2.deps.json
-C:\Users\andrzej.gajewski\source\repos\SZZP2.2\SZZP2.2\bin\Debug\netcoreapp2.2\SZZP2.2.runtimeconfig.json
-C:\Users\andrzej.gajewski\source\repos\SZZP2.2\SZZP2.2\bin\Debug\netcoreapp2.2\SZZP2.2.runtimeconfig.dev.json
-C:\Users\andrzej.gajewski\source\repos\SZZP2.2\SZZP2.2\bin\Debug\netcoreapp2.2\SZZP2.2.dll
-C:\Users\andrzej.gajewski\source\repos\SZZP2.2\SZZP2.2\bin\Debug\netcoreapp2.2\SZZP2.2.pdb
-C:\Users\andrzej.gajewski\source\repos\SZZP2.2\SZZP2.2\bin\Debug\netcoreapp2.2\SZZP2.2.Views.dll
-C:\Users\andrzej.gajewski\source\repos\SZZP2.2\SZZP2.2\bin\Debug\netcoreapp2.2\SZZP2.2.Views.pdb
-C:\Users\andrzej.gajewski\source\repos\SZZP2.2\SZZP2.2\obj\Debug\netcoreapp2.2\SZZP2.2.csproj.CoreCompileInputs.cache
-C:\Users\andrzej.gajewski\source\repos\SZZP2.2\SZZP2.2\obj\Debug\netcoreapp2.2\SZZP2.2.RazorAssemblyInfo.cache
-C:\Users\andrzej.gajewski\source\repos\SZZP2.2\SZZP2.2\obj\Debug\netcoreapp2.2\SZZP2.2.RazorAssemblyInfo.cs
-C:\Users\andrzej.gajewski\source\repos\SZZP2.2\SZZP2.2\obj\Debug\netcoreapp2.2\SZZP2.2.AssemblyInfoInputs.cache
-C:\Users\andrzej.gajewski\source\repos\SZZP2.2\SZZP2.2\obj\Debug\netcoreapp2.2\SZZP2.2.AssemblyInfo.cs
-C:\Users\andrzej.gajewski\source\repos\SZZP2.2\SZZP2.2\obj\Debug\netcoreapp2.2\SZZP2.2.TagHelpers.input.cache
-C:\Users\andrzej.gajewski\source\repos\SZZP2.2\SZZP2.2\obj\Debug\netcoreapp2.2\SZZP2.2.TagHelpers.output.cache
-C:\Users\andrzej.gajewski\source\repos\SZZP2.2\SZZP2.2\obj\Debug\netcoreapp2.2\SZZP2.2.RazorCoreGenerate.cache
-C:\Users\andrzej.gajewski\source\repos\SZZP2.2\SZZP2.2\obj\Debug\netcoreapp2.2\Razor\Views\Home\Index.g.cshtml.cs
-C:\Users\andrzej.gajewski\source\repos\SZZP2.2\SZZP2.2\obj\Debug\netcoreapp2.2\Razor\Views\Home\Privacy.g.cshtml.cs
-C:\Users\andrzej.gajewski\source\repos\SZZP2.2\SZZP2.2\obj\Debug\netcoreapp2.2\Razor\Views\Shared\Error.g.cshtml.cs
-C:\Users\andrzej.gajewski\source\repos\SZZP2.2\SZZP2.2\obj\Debug\netcoreapp2.2\Razor\Views\Shared\_CookieConsentPartial.g.cshtml.cs
-C:\Users\andrzej.gajewski\source\repos\SZZP2.2\SZZP2.2\obj\Debug\netcoreapp2.2\Razor\Views\Shared\_Layout.g.cshtml.cs
-C:\Users\andrzej.gajewski\source\repos\SZZP2.2\SZZP2.2\obj\Debug\netcoreapp2.2\Razor\Views\Shared\_ValidationScriptsPartial.g.cshtml.cs
-C:\Users\andrzej.gajewski\source\repos\SZZP2.2\SZZP2.2\obj\Debug\netcoreapp2.2\Razor\Views\_ViewImports.g.cshtml.cs
-C:\Users\andrzej.gajewski\source\repos\SZZP2.2\SZZP2.2\obj\Debug\netcoreapp2.2\Razor\Views\_ViewStart.g.cshtml.cs
-C:\Users\andrzej.gajewski\source\repos\SZZP2.2\SZZP2.2\obj\Debug\netcoreapp2.2\SZZP2.2.RazorTargetAssemblyInfo.cache
-C:\Users\andrzej.gajewski\source\repos\SZZP2.2\SZZP2.2\obj\Debug\netcoreapp2.2\SZZP2.2.RazorTargetAssemblyInfo.cs
-C:\Users\andrzej.gajewski\source\repos\SZZP2.2\SZZP2.2\obj\Debug\netcoreapp2.2\SZZP2.2.Views.pdb
-C:\Users\andrzej.gajewski\source\repos\SZZP2.2\SZZP2.2\obj\Debug\netcoreapp2.2\SZZP2.2.dll
-C:\Users\andrzej.gajewski\source\repos\SZZP2.2\SZZP2.2\obj\Debug\netcoreapp2.2\SZZP2.2.pdb
-C:\Users\andrzej.gajewski\source\repos\SZZP2.2\SZZP2.2\obj\Debug\netcoreapp2.2\SZZP2.2.csproj.CopyComplete
-C:\Users\andrzej.gajewski\source\repos\SZZP2.2\SZZP2.2\obj\Debug\netcoreapp2.2\Razor\Views\Offices\Create.g.cshtml.cs
-C:\Users\andrzej.gajewski\source\repos\SZZP2.2\SZZP2.2\obj\Debug\netcoreapp2.2\Razor\Views\Offices\Delete.g.cshtml.cs
-C:\Users\andrzej.gajewski\source\repos\SZZP2.2\SZZP2.2\obj\Debug\netcoreapp2.2\Razor\Views\Offices\Details.g.cshtml.cs
-C:\Users\andrzej.gajewski\source\repos\SZZP2.2\SZZP2.2\obj\Debug\netcoreapp2.2\Razor\Views\Offices\Edit.g.cshtml.cs
-C:\Users\andrzej.gajewski\source\repos\SZZP2.2\SZZP2.2\obj\Debug\netcoreapp2.2\Razor\Views\Offices\Index.g.cshtml.cs
-C:\Users\andrzej.gajewski\source\repos\SZZP2.2\SZZP2.2\obj\Debug\netcoreapp2.2\Razor\Views\Departments\Create.g.cshtml.cs
-C:\Users\andrzej.gajewski\source\repos\SZZP2.2\SZZP2.2\obj\Debug\netcoreapp2.2\Razor\Views\Departments\Delete.g.cshtml.cs
-C:\Users\andrzej.gajewski\source\repos\SZZP2.2\SZZP2.2\obj\Debug\netcoreapp2.2\Razor\Views\Departments\Details.g.cshtml.cs
-C:\Users\andrzej.gajewski\source\repos\SZZP2.2\SZZP2.2\obj\Debug\netcoreapp2.2\Razor\Views\Departments\Edit.g.cshtml.cs
-C:\Users\andrzej.gajewski\source\repos\SZZP2.2\SZZP2.2\obj\Debug\netcoreapp2.2\Razor\Views\Departments\Index.g.cshtml.cs
-C:\Users\andrzej.gajewski\source\repos\SZZP2.2\SZZP2.2\obj\Debug\netcoreapp2.2\Razor\Views\Employments\Create.g.cshtml.cs
-C:\Users\andrzej.gajewski\source\repos\SZZP2.2\SZZP2.2\obj\Debug\netcoreapp2.2\Razor\Views\Employments\Delete.g.cshtml.cs
-C:\Users\andrzej.gajewski\source\repos\SZZP2.2\SZZP2.2\obj\Debug\netcoreapp2.2\Razor\Views\Employments\Details.g.cshtml.cs
-C:\Users\andrzej.gajewski\source\repos\SZZP2.2\SZZP2.2\obj\Debug\netcoreapp2.2\Razor\Views\Employments\Edit.g.cshtml.cs
-C:\Users\andrzej.gajewski\source\repos\SZZP2.2\SZZP2.2\obj\Debug\netcoreapp2.2\Razor\Views\Employments\Index.g.cshtml.cs
-C:\Users\andrzej.gajewski\source\repos\SZZP2.2\SZZP2.2\obj\Debug\netcoreapp2.2\Razor\Views\Administrators\Index.g.cshtml.cs
-C:\Users\andrzej.gajewski\source\repos\SZZP2.2\SZZP2.2\obj\Debug\netcoreapp2.2\Razor\Views\APPUsers\Create.g.cshtml.cs
-C:\Users\andrzej.gajewski\source\repos\SZZP2.2\SZZP2.2\obj\Debug\netcoreapp2.2\Razor\Views\APPUsers\Delete.g.cshtml.cs
-C:\Users\andrzej.gajewski\source\repos\SZZP2.2\SZZP2.2\obj\Debug\netcoreapp2.2\Razor\Views\APPUsers\Details.g.cshtml.cs
-C:\Users\andrzej.gajewski\source\repos\SZZP2.2\SZZP2.2\obj\Debug\netcoreapp2.2\Razor\Views\APPUsers\Edit.g.cshtml.cs
-C:\Users\andrzej.gajewski\source\repos\SZZP2.2\SZZP2.2\obj\Debug\netcoreapp2.2\Razor\Views\APPUsers\Index.g.cshtml.cs
-C:\Users\andrzej.gajewski\source\repos\SZZP2.2\SZZP2.2\obj\Debug\netcoreapp2.2\SZZP2.2.csprojAssemblyReference.cache
-C:\Users\andrzej.gajewski\source\repos\SZZP2.2 — kopia przed logowaniem\SZZP2.2\bin\Debug\netcoreapp2.2\SZZP2.2.deps.json
-C:\Users\andrzej.gajewski\source\repos\SZZP2.2 — kopia przed logowaniem\SZZP2.2\bin\Debug\netcoreapp2.2\SZZP2.2.runtimeconfig.json
-C:\Users\andrzej.gajewski\source\repos\SZZP2.2 — kopia przed logowaniem\SZZP2.2\bin\Debug\netcoreapp2.2\SZZP2.2.runtimeconfig.dev.json
-C:\Users\andrzej.gajewski\source\repos\SZZP2.2 — kopia przed logowaniem\SZZP2.2\bin\Debug\netcoreapp2.2\SZZP2.2.dll
-C:\Users\andrzej.gajewski\source\repos\SZZP2.2 — kopia przed logowaniem\SZZP2.2\bin\Debug\netcoreapp2.2\SZZP2.2.pdb
-C:\Users\andrzej.gajewski\source\repos\SZZP2.2 — kopia przed logowaniem\SZZP2.2\bin\Debug\netcoreapp2.2\SZZP2.2.Views.dll
-C:\Users\andrzej.gajewski\source\repos\SZZP2.2 — kopia przed logowaniem\SZZP2.2\bin\Debug\netcoreapp2.2\SZZP2.2.Views.pdb
-C:\Users\andrzej.gajewski\source\repos\SZZP2.2 — kopia przed logowaniem\SZZP2.2\obj\Debug\netcoreapp2.2\SZZP2.2.csproj.CoreCompileInputs.cache
-C:\Users\andrzej.gajewski\source\repos\SZZP2.2 — kopia przed logowaniem\SZZP2.2\obj\Debug\netcoreapp2.2\SZZP2.2.RazorAssemblyInfo.cache
-C:\Users\andrzej.gajewski\source\repos\SZZP2.2 — kopia przed logowaniem\SZZP2.2\obj\Debug\netcoreapp2.2\SZZP2.2.RazorAssemblyInfo.cs
-C:\Users\andrzej.gajewski\source\repos\SZZP2.2 — kopia przed logowaniem\SZZP2.2\obj\Debug\netcoreapp2.2\SZZP2.2.AssemblyInfoInputs.cache
-C:\Users\andrzej.gajewski\source\repos\SZZP2.2 — kopia przed logowaniem\SZZP2.2\obj\Debug\netcoreapp2.2\SZZP2.2.AssemblyInfo.cs
-C:\Users\andrzej.gajewski\source\repos\SZZP2.2 — kopia przed logowaniem\SZZP2.2\obj\Debug\netcoreapp2.2\SZZP2.2.TagHelpers.input.cache
-C:\Users\andrzej.gajewski\source\repos\SZZP2.2 — kopia przed logowaniem\SZZP2.2\obj\Debug\netcoreapp2.2\SZZP2.2.TagHelpers.output.cache
-C:\Users\andrzej.gajewski\source\repos\SZZP2.2 — kopia przed logowaniem\SZZP2.2\obj\Debug\netcoreapp2.2\SZZP2.2.RazorCoreGenerate.cache
-C:\Users\andrzej.gajewski\source\repos\SZZP2.2 — kopia przed logowaniem\SZZP2.2\obj\Debug\netcoreapp2.2\Razor\Views\Administrators\Index.g.cshtml.cs
-C:\Users\andrzej.gajewski\source\repos\SZZP2.2 — kopia przed logowaniem\SZZP2.2\obj\Debug\netcoreapp2.2\Razor\Views\APPUsers\Create.g.cshtml.cs
-C:\Users\andrzej.gajewski\source\repos\SZZP2.2 — kopia przed logowaniem\SZZP2.2\obj\Debug\netcoreapp2.2\Razor\Views\APPUsers\Delete.g.cshtml.cs
-C:\Users\andrzej.gajewski\source\repos\SZZP2.2 — kopia przed logowaniem\SZZP2.2\obj\Debug\netcoreapp2.2\Razor\Views\APPUsers\Details.g.cshtml.cs
-C:\Users\andrzej.gajewski\source\repos\SZZP2.2 — kopia przed logowaniem\SZZP2.2\obj\Debug\netcoreapp2.2\Razor\Views\APPUsers\Edit.g.cshtml.cs
-C:\Users\andrzej.gajewski\source\repos\SZZP2.2 — kopia przed logowaniem\SZZP2.2\obj\Debug\netcoreapp2.2\Razor\Views\APPUsers\Index.g.cshtml.cs
-C:\Users\andrzej.gajewski\source\repos\SZZP2.2 — kopia przed logowaniem\SZZP2.2\obj\Debug\netcoreapp2.2\Razor\Views\Departments\Create.g.cshtml.cs
-C:\Users\andrzej.gajewski\source\repos\SZZP2.2 — kopia przed logowaniem\SZZP2.2\obj\Debug\netcoreapp2.2\Razor\Views\Departments\Delete.g.cshtml.cs
-C:\Users\andrzej.gajewski\source\repos\SZZP2.2 — kopia przed logowaniem\SZZP2.2\obj\Debug\netcoreapp2.2\Razor\Views\Departments\Details.g.cshtml.cs
-C:\Users\andrzej.gajewski\source\repos\SZZP2.2 — kopia przed logowaniem\SZZP2.2\obj\Debug\netcoreapp2.2\Razor\Views\Departments\Edit.g.cshtml.cs
-C:\Users\andrzej.gajewski\source\repos\SZZP2.2 — kopia przed logowaniem\SZZP2.2\obj\Debug\netcoreapp2.2\Razor\Views\Departments\Index.g.cshtml.cs
-C:\Users\andrzej.gajewski\source\repos\SZZP2.2 — kopia przed logowaniem\SZZP2.2\obj\Debug\netcoreapp2.2\Razor\Views\Employments\Create.g.cshtml.cs
-C:\Users\andrzej.gajewski\source\repos\SZZP2.2 — kopia przed logowaniem\SZZP2.2\obj\Debug\netcoreapp2.2\Razor\Views\Employments\Delete.g.cshtml.cs
-C:\Users\andrzej.gajewski\source\repos\SZZP2.2 — kopia przed logowaniem\SZZP2.2\obj\Debug\netcoreapp2.2\Razor\Views\Employments\Details.g.cshtml.cs
-C:\Users\andrzej.gajewski\source\repos\SZZP2.2 — kopia przed logowaniem\SZZP2.2\obj\Debug\netcoreapp2.2\Razor\Views\Employments\Edit.g.cshtml.cs
-C:\Users\andrzej.gajewski\source\repos\SZZP2.2 — kopia przed logowaniem\SZZP2.2\obj\Debug\netcoreapp2.2\Razor\Views\Employments\Index.g.cshtml.cs
-C:\Users\andrzej.gajewski\source\repos\SZZP2.2 — kopia przed logowaniem\SZZP2.2\obj\Debug\netcoreapp2.2\Razor\Views\Home\Index.g.cshtml.cs
-C:\Users\andrzej.gajewski\source\repos\SZZP2.2 — kopia przed logowaniem\SZZP2.2\obj\Debug\netcoreapp2.2\Razor\Views\Home\Privacy.g.cshtml.cs
-C:\Users\andrzej.gajewski\source\repos\SZZP2.2 — kopia przed logowaniem\SZZP2.2\obj\Debug\netcoreapp2.2\Razor\Views\Offices\Create.g.cshtml.cs
-C:\Users\andrzej.gajewski\source\repos\SZZP2.2 — kopia przed logowaniem\SZZP2.2\obj\Debug\netcoreapp2.2\Razor\Views\Offices\Delete.g.cshtml.cs
-C:\Users\andrzej.gajewski\source\repos\SZZP2.2 — kopia przed logowaniem\SZZP2.2\obj\Debug\netcoreapp2.2\Razor\Views\Offices\Details.g.cshtml.cs
-C:\Users\andrzej.gajewski\source\repos\SZZP2.2 — kopia przed logowaniem\SZZP2.2\obj\Debug\netcoreapp2.2\Razor\Views\Offices\Edit.g.cshtml.cs
-C:\Users\andrzej.gajewski\source\repos\SZZP2.2 — kopia przed logowaniem\SZZP2.2\obj\Debug\netcoreapp2.2\Razor\Views\Offices\Index.g.cshtml.cs
-C:\Users\andrzej.gajewski\source\repos\SZZP2.2 — kopia przed logowaniem\SZZP2.2\obj\Debug\netcoreapp2.2\Razor\Views\Shared\Error.g.cshtml.cs
-C:\Users\andrzej.gajewski\source\repos\SZZP2.2 — kopia przed logowaniem\SZZP2.2\obj\Debug\netcoreapp2.2\Razor\Views\Shared\_CookieConsentPartial.g.cshtml.cs
-C:\Users\andrzej.gajewski\source\repos\SZZP2.2 — kopia przed logowaniem\SZZP2.2\obj\Debug\netcoreapp2.2\Razor\Views\Shared\_Layout.g.cshtml.cs
-C:\Users\andrzej.gajewski\source\repos\SZZP2.2 — kopia przed logowaniem\SZZP2.2\obj\Debug\netcoreapp2.2\Razor\Views\Shared\_ValidationScriptsPartial.g.cshtml.cs
-C:\Users\andrzej.gajewski\source\repos\SZZP2.2 — kopia przed logowaniem\SZZP2.2\obj\Debug\netcoreapp2.2\Razor\Views\_ViewImports.g.cshtml.cs
-C:\Users\andrzej.gajewski\source\repos\SZZP2.2 — kopia przed logowaniem\SZZP2.2\obj\Debug\netcoreapp2.2\Razor\Views\_ViewStart.g.cshtml.cs
-C:\Users\andrzej.gajewski\source\repos\SZZP2.2 — kopia przed logowaniem\SZZP2.2\obj\Debug\netcoreapp2.2\SZZP2.2.RazorTargetAssemblyInfo.cache
-C:\Users\andrzej.gajewski\source\repos\SZZP2.2 — kopia przed logowaniem\SZZP2.2\obj\Debug\netcoreapp2.2\SZZP2.2.RazorTargetAssemblyInfo.cs
-C:\Users\andrzej.gajewski\source\repos\SZZP2.2 — kopia przed logowaniem\SZZP2.2\obj\Debug\netcoreapp2.2\SZZP2.2.Views.pdb
-C:\Users\andrzej.gajewski\source\repos\SZZP2.2 — kopia przed logowaniem\SZZP2.2\obj\Debug\netcoreapp2.2\SZZP2.2.dll
-C:\Users\andrzej.gajewski\source\repos\SZZP2.2 — kopia przed logowaniem\SZZP2.2\obj\Debug\netcoreapp2.2\SZZP2.2.pdb
-C:\Users\andrzej.gajewski\source\repos\SZZP2.2 — kopia przed logowaniem\SZZP2.2\obj\Debug\netcoreapp2.2\SZZP2.2.csproj.CopyComplete
-C:\Users\andrzej.gajewski\source\repos\SZZP2.2 — kopia przed logowaniem\SZZP2.2\obj\Debug\netcoreapp2.2\SZZP2.2.csprojAssemblyReference.cache
+C:\Users\gajew\Desktop\SZZP\SZZP2.2\bin\Debug\netcoreapp2.2\SZZP2.2.deps.json
+C:\Users\gajew\Desktop\SZZP\SZZP2.2\bin\Debug\netcoreapp2.2\SZZP2.2.runtimeconfig.json
+C:\Users\gajew\Desktop\SZZP\SZZP2.2\bin\Debug\netcoreapp2.2\SZZP2.2.runtimeconfig.dev.json
+C:\Users\gajew\Desktop\SZZP\SZZP2.2\bin\Debug\netcoreapp2.2\SZZP2.2.dll
+C:\Users\gajew\Desktop\SZZP\SZZP2.2\bin\Debug\netcoreapp2.2\SZZP2.2.pdb
+C:\Users\gajew\Desktop\SZZP\SZZP2.2\bin\Debug\netcoreapp2.2\SZZP2.2.Views.dll
+C:\Users\gajew\Desktop\SZZP\SZZP2.2\bin\Debug\netcoreapp2.2\SZZP2.2.Views.pdb
+C:\Users\gajew\Desktop\SZZP\SZZP2.2\obj\Debug\netcoreapp2.2\SZZP2.2.csproj.CoreCompileInputs.cache
+C:\Users\gajew\Desktop\SZZP\SZZP2.2\obj\Debug\netcoreapp2.2\SZZP2.2.RazorAssemblyInfo.cache
+C:\Users\gajew\Desktop\SZZP\SZZP2.2\obj\Debug\netcoreapp2.2\SZZP2.2.RazorAssemblyInfo.cs
+C:\Users\gajew\Desktop\SZZP\SZZP2.2\obj\Debug\netcoreapp2.2\SZZP2.2.AssemblyInfoInputs.cache
+C:\Users\gajew\Desktop\SZZP\SZZP2.2\obj\Debug\netcoreapp2.2\SZZP2.2.AssemblyInfo.cs
+C:\Users\gajew\Desktop\SZZP\SZZP2.2\obj\Debug\netcoreapp2.2\SZZP2.2.TagHelpers.input.cache
+C:\Users\gajew\Desktop\SZZP\SZZP2.2\obj\Debug\netcoreapp2.2\SZZP2.2.TagHelpers.output.cache
+C:\Users\gajew\Desktop\SZZP\SZZP2.2\obj\Debug\netcoreapp2.2\SZZP2.2.RazorCoreGenerate.cache
+C:\Users\gajew\Desktop\SZZP\SZZP2.2\obj\Debug\netcoreapp2.2\Razor\Views\Administrators\Index.g.cshtml.cs
+C:\Users\gajew\Desktop\SZZP\SZZP2.2\obj\Debug\netcoreapp2.2\Razor\Views\APPUsers\Create.g.cshtml.cs
+C:\Users\gajew\Desktop\SZZP\SZZP2.2\obj\Debug\netcoreapp2.2\Razor\Views\APPUsers\Delete.g.cshtml.cs
+C:\Users\gajew\Desktop\SZZP\SZZP2.2\obj\Debug\netcoreapp2.2\Razor\Views\APPUsers\Details.g.cshtml.cs
+C:\Users\gajew\Desktop\SZZP\SZZP2.2\obj\Debug\netcoreapp2.2\Razor\Views\APPUsers\Edit.g.cshtml.cs
+C:\Users\gajew\Desktop\SZZP\SZZP2.2\obj\Debug\netcoreapp2.2\Razor\Views\APPUsers\Index.g.cshtml.cs
+C:\Users\gajew\Desktop\SZZP\SZZP2.2\obj\Debug\netcoreapp2.2\Razor\Views\Departments\Create.g.cshtml.cs
+C:\Users\gajew\Desktop\SZZP\SZZP2.2\obj\Debug\netcoreapp2.2\Razor\Views\Departments\Delete.g.cshtml.cs
+C:\Users\gajew\Desktop\SZZP\SZZP2.2\obj\Debug\netcoreapp2.2\Razor\Views\Departments\Details.g.cshtml.cs
+C:\Users\gajew\Desktop\SZZP\SZZP2.2\obj\Debug\netcoreapp2.2\Razor\Views\Departments\Edit.g.cshtml.cs
+C:\Users\gajew\Desktop\SZZP\SZZP2.2\obj\Debug\netcoreapp2.2\Razor\Views\Departments\Index.g.cshtml.cs
+C:\Users\gajew\Desktop\SZZP\SZZP2.2\obj\Debug\netcoreapp2.2\Razor\Views\Employments\Create.g.cshtml.cs
+C:\Users\gajew\Desktop\SZZP\SZZP2.2\obj\Debug\netcoreapp2.2\Razor\Views\Employments\Delete.g.cshtml.cs
+C:\Users\gajew\Desktop\SZZP\SZZP2.2\obj\Debug\netcoreapp2.2\Razor\Views\Employments\Details.g.cshtml.cs
+C:\Users\gajew\Desktop\SZZP\SZZP2.2\obj\Debug\netcoreapp2.2\Razor\Views\Employments\Edit.g.cshtml.cs
+C:\Users\gajew\Desktop\SZZP\SZZP2.2\obj\Debug\netcoreapp2.2\Razor\Views\Employments\Index.g.cshtml.cs
+C:\Users\gajew\Desktop\SZZP\SZZP2.2\obj\Debug\netcoreapp2.2\Razor\Views\Home\Index.g.cshtml.cs
+C:\Users\gajew\Desktop\SZZP\SZZP2.2\obj\Debug\netcoreapp2.2\Razor\Views\Home\Privacy.g.cshtml.cs
+C:\Users\gajew\Desktop\SZZP\SZZP2.2\obj\Debug\netcoreapp2.2\Razor\Views\Offices\Create.g.cshtml.cs
+C:\Users\gajew\Desktop\SZZP\SZZP2.2\obj\Debug\netcoreapp2.2\Razor\Views\Offices\Delete.g.cshtml.cs
+C:\Users\gajew\Desktop\SZZP\SZZP2.2\obj\Debug\netcoreapp2.2\Razor\Views\Offices\Details.g.cshtml.cs
+C:\Users\gajew\Desktop\SZZP\SZZP2.2\obj\Debug\netcoreapp2.2\Razor\Views\Offices\Edit.g.cshtml.cs
+C:\Users\gajew\Desktop\SZZP\SZZP2.2\obj\Debug\netcoreapp2.2\Razor\Views\Offices\Index.g.cshtml.cs
+C:\Users\gajew\Desktop\SZZP\SZZP2.2\obj\Debug\netcoreapp2.2\Razor\Views\Shared\Error.g.cshtml.cs
+C:\Users\gajew\Desktop\SZZP\SZZP2.2\obj\Debug\netcoreapp2.2\Razor\Views\Shared\_CookieConsentPartial.g.cshtml.cs
+C:\Users\gajew\Desktop\SZZP\SZZP2.2\obj\Debug\netcoreapp2.2\Razor\Views\Shared\_Layout.g.cshtml.cs
+C:\Users\gajew\Desktop\SZZP\SZZP2.2\obj\Debug\netcoreapp2.2\Razor\Views\Shared\_ValidationScriptsPartial.g.cshtml.cs
+C:\Users\gajew\Desktop\SZZP\SZZP2.2\obj\Debug\netcoreapp2.2\Razor\Views\_ViewImports.g.cshtml.cs
+C:\Users\gajew\Desktop\SZZP\SZZP2.2\obj\Debug\netcoreapp2.2\Razor\Views\_ViewStart.g.cshtml.cs
+C:\Users\gajew\Desktop\SZZP\SZZP2.2\obj\Debug\netcoreapp2.2\SZZP2.2.RazorTargetAssemblyInfo.cache
+C:\Users\gajew\Desktop\SZZP\SZZP2.2\obj\Debug\netcoreapp2.2\SZZP2.2.RazorTargetAssemblyInfo.cs
+C:\Users\gajew\Desktop\SZZP\SZZP2.2\obj\Debug\netcoreapp2.2\SZZP2.2.Views.pdb
+C:\Users\gajew\Desktop\SZZP\SZZP2.2\obj\Debug\netcoreapp2.2\SZZP2.2.dll
+C:\Users\gajew\Desktop\SZZP\SZZP2.2\obj\Debug\netcoreapp2.2\SZZP2.2.pdb
+C:\Users\gajew\Desktop\SZZP\SZZP2.2\obj\Debug\netcoreapp2.2\SZZP2.2.csproj.CopyComplete
+C:\Users\gajew\Desktop\SZZP\SZZP2.2\obj\Debug\netcoreapp2.2\SZZP2.2.csprojAssemblyReference.cache
