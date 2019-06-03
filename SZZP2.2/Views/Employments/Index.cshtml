@@ -11,7 +11,7 @@
 </p>
 <table class="table table-striped table-responsive">
     <thead>
-        <tr style="font-size: 13px;" class="small text-left">
+        <tr style="font-size:13px" class="small text-left">
             <th>Imię</th>
             <th>Nazwisko</th>
             <th>NrSap</th>
@@ -26,7 +26,7 @@
     </thead>
     <tbody>
 @foreach (var item in Model.Employments) {
-        <tr style="font-size: 13px;" class="small">
+        <tr style="font-size:13px" class="small">
             <td>
                 @Html.DisplayFor(modelItem => item.Name)
             </td>
@@ -46,7 +46,7 @@
                 @Html.DisplayFor(modelItem => item.Offices.NameOffice)
             </td>
             @*<td>
-               
+
             </td>*@
             <td>
                 @Html.DisplayFor(modelItem => item.Positions.NamePosition)

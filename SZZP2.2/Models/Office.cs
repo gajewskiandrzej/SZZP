@@ -7,9 +7,9 @@ namespace SZZP2._2.Models
     {
         [Key]
         public int IDOffice { get; set; }
-        [Display(Name ="Nazwa")]
+        [Display(Name ="Nazwa Biura")]
         public string NameOffice { get; set; }
-        [Display(Name = "Symbol")]
+        [Display(Name = "Symbol Biura")]
         public string SymbolOffice { get; set; }
 
         public ICollection<ADUser> ADUsers { get; set; }

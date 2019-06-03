@@ -4,7 +4,7 @@ using SZZP2._2.Models;
 
 namespace SZZP2._2.Controllers
 {
-    public class AdministratorsController : Controller
+    public class AdministratorController : Controller
     {
         public IActionResult Index()
         {

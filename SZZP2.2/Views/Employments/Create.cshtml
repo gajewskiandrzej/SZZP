@@ -2,7 +2,22 @@
 @{
 
 
-
+    @*<script type="text/javascript">
+        $(document).ready(function () {
+            $('#IDOffice').change(function () {
+                var url = '@Url.Content("~/")' + "Employments/GetDepartment";
+                var ddlsource = "#IDOffice";
+                    $.getJSON(url, { id: $(ddlsource).val() }, function (data) {
+                        var items = '';
+                        $("#IDDepartment").empty();
+                        $.each(data, function (i, department) {
+                            items += "<option value='" + department.value + "'>" + department.text + "</option>";
+                        });
+                        $('#IDDepartment').html(items);
+                    });
+            });
+        });
+        </script>*@
 
 }
 <!--ViewData["Title"] = "Create";-->
@@ -85,9 +100,9 @@
 
 
         $("#IDOffice").change(function () {
-            var url = '@Url.Action("GetDepartment", "Employments")';
+            var url = '@Url.Action("GetDepartment", "Employments")';           
             var id = $(this).val();
-
+                     
             $.getJSON(url, { IDOffice: id }, function (response) {
                 $("#IDDepartment").empty();
                 $.each(response, function (index, dep) {
@@ -111,20 +126,3 @@
         <input asp-for="OfficeSymbol" class="form-control" />
         <span asp-validation-for="OfficeSymbol" class="text-danger"></span>
     </div>*@
-
-@*<script type="text/javascript">
-    $(document).ready(function () {
-        $('#IDOffice').change(function () {
-            var url = '@Url.Content("~/")' + "Employments/GetDepartment";
-            var ddlsource = "#IDOffice";
-                $.getJSON(url, { id: $(ddlsource).val() }, function (data) {
-                    var items = '';
-                    $("#IDDepartment").empty();
-                    $.each(data, function (i, department) {
-                        items += "<option value='" + department.value + "'>" + department.text + "</option>";
-                    });
-                    $('#IDDepartment').html(items);
-                });
-        });
-    });
-    </script>*@

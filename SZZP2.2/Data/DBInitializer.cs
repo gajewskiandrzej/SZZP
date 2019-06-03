@@ -94,28 +94,6 @@ namespace SZZP2._2.Data
             }
             context.SaveChanges();
 
-            var roles = new Role[]
-            {
-                new Role{NameRole="Administrator Aplikacji"},
-                new Role{NameRole="Administrator Active Directory"},
-                new Role{NameRole="Pracownik HR"}
-            };
-            foreach (Role r in roles)
-            {
-                context.SaveChanges();
-            }
-
-            var appusers = new APPUser[]
-            {
-                new APPUser{Login="andrzej.gajewski",Password="123",IDRole=1},
-                new APPUser{Login="mariusz.kulesza",Password="123",IDRole=2},
-                new APPUser{Login="julita.kuzniak",Password="123",IDRole=3}
-            };
-            foreach (APPUser a in appusers)
-            {
-                context.SaveChanges();
-            }
-
             var employments = new Employment[]
             {
                 new Employment{Name="Janusz",Surname="Kowalski",NrSap="80000123",DateEmployment=DateTime.Parse("2015-01-31") ,EndContract=DateTime.Parse("2020-01-31"),IDOffice=1,OfficeSymbol="KNE",IDDepartment=1,IDStatus= 1, IDPosition = 1},
@@ -128,3 +106,26 @@ namespace SZZP2._2.Data
         }
     }
 }
+
+
+//var roles = new Role[]
+//{
+//    new Role{NameRole="Administrator Aplikacji"},
+//    new Role{NameRole="Administrator Active Directory"},
+//    new Role{NameRole="Pracownik HR"}
+//};
+//foreach (Role r in roles)
+//{
+//    context.SaveChanges();
+//}
+
+//var appusers = new APPUser[]
+//{
+//    new APPUser{Login="andrzej.gajewski",Password="123",IDRole=1},
+//    new APPUser{Login="mariusz.kulesza",Password="123",IDRole=2},
+//    new APPUser{Login="julita.kuzniak",Password="123",IDRole=3}
+//};
+//foreach (APPUser a in appusers)
+//{
+//    context.SaveChanges();
+//}
