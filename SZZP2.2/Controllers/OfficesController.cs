@@ -1,16 +1,15 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using System.Linq;
 using System.Threading.Tasks;
-using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Mvc.Rendering;
-using Microsoft.EntityFrameworkCore;
 using SZZP2._2.Data;
 using SZZP2._2.Models;
 
 
 namespace SZZP2._2.Controllers
 {
+    [Authorize]
     public class OfficesController : Controller
     {
         private readonly SZZPContext _context;
@@ -21,6 +20,7 @@ namespace SZZP2._2.Controllers
         }
 
         // GET: Offices
+        [Authorize(Roles = "AdministratorAplikacji")]
         public async Task<IActionResult> Index()
         {
             return View(await _context.Offices.ToListAsync());

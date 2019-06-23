@@ -86,7 +86,8 @@ namespace SZZP2._2.Data
             var statuses = new Status[]
             {
                 new Status{NameStatus="HR Workflow"},
-                new Status{NameStatus="IT Workflow"}
+                new Status{NameStatus="IT Workflow"},
+                new Status{NameStatus="Zapisz do AD"}
             };
             foreach (Status s in statuses)
             {
@@ -103,21 +104,13 @@ namespace SZZP2._2.Data
             {
                 context.SaveChanges();
             }
+
         }
     }
 }
 
 
-//var roles = new Role[]
-//{
-//    new Role{NameRole="Administrator Aplikacji"},
-//    new Role{NameRole="Administrator Active Directory"},
-//    new Role{NameRole="Pracownik HR"}
-//};
-//foreach (Role r in roles)
-//{
-//    context.SaveChanges();
-//}
+
 
 //var appusers = new APPUser[]
 //{

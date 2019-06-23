@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using System.Linq;
@@ -8,6 +9,7 @@ using SZZP2._2.Models;
 
 namespace SZZP2._2.Controllers
 {
+    [Authorize(Roles = "AdministratorAplikacji")]
     public class DepartmentsController : Controller
     {
         private readonly SZZPContext _context;

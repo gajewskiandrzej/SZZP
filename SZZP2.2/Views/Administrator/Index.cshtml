@@ -1,0 +1,43 @@
+﻿@{
+    ViewData["Title"] = "Administrator";
+}
+
+
+<div class="row">
+    <div class="col-md-4">
+        <h2>Użytkownicy systemu</h2>
+        <div class="panel panel-primary">
+            <div class="panel-heading">Użytkownicy</div>
+            <div class="panel-body text-center">
+                <i class="far fa-address-card fa-10x"></i>
+            </div>
+            <div class="panel-footer text-center">
+                <a asp-area="" asp-controller="Users" asp-action="Index">Użytkownicy</a>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <h2>Biura PKP S.A.</h2>
+        <div class="panel panel-primary">
+            <div class="panel-heading">Biura</div>
+            <div class="panel-body text-center">
+                <i class="fas fa-briefcase fa-10x"></i>
+            </div>
+            <div class="panel-footer text-center">
+                <a asp-area="" asp-controller="Offices" asp-action="Index">Biura</a>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <h2>Wydziały PKP S.A.</h2>
+        <div class="panel panel-primary">
+            <div class="panel-heading">Wydziały</div>
+            <div class="panel-body text-center">
+                <i class="fab fa-accusoft fa-10x"></i>
+            </div>
+            <div class="panel-footer text-center">
+                <a asp-area="" asp-controller="Departments" asp-action="Index">Wydziały</a>
+            </div>
+        </div>
+    </div>
+</div>

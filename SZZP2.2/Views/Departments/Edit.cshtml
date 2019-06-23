@@ -13,7 +13,7 @@
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <input type="hidden" asp-for="IDDepartment" />
             <div class="form-group">
-                <label asp-for="IDOffice" class="control-label"></label>
+                <label asp-for="Offices.NameOffice" class="control-label"></label>
                 <select asp-for="IDOffice" class="form-control" asp-items="ViewBag.IDOffice"></select>
                 <span asp-validation-for="IDOffice" class="text-danger"></span>
             </div>
@@ -28,7 +28,7 @@
                 <span asp-validation-for="SymbolDeprtament" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <input type="submit" value="Save" class="btn btn-success" />
+                <input type="submit" value="Zapisz" class="btn btn-success" />
             </div>
         </form>
     </div>

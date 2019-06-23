@@ -1,4 +1,6 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
@@ -11,69 +13,73 @@ using SZZP2._2.Models.SZZPViewModels;
 
 namespace SZZP2._2.Controllers
 {
+    [Authorize]
     public class EmploymentsController : Controller
     {
         private readonly SZZPContext _context;
-
-        public EmploymentsController(SZZPContext context)
+        private readonly UserManager<ApplicationUser> _userManager;
+        public EmploymentsController(SZZPContext context, UserManager<ApplicationUser> userManager)
         {
             _context = context;
+            _userManager = userManager;
         }
 
-        // GET: Employments
+        //-----------------------------------GET: Employments
         public async Task<IActionResult> Index(int id)
         {
-            //var sZZPContext = _context.Employments
-            //    .Include(e => e.Offices)
-            //        .ThenInclude(e => e.Departments)
-            //    .Include(e => e.Positions)
-            //    .Include(e => e.Statuses);
-            //return View(await sZZPContext.ToListAsync());
-            
             var viewModel = new EmploymentIndexData();
-            viewModel.Employments = await _context.Employments
-                .Include(e => e.Offices)
-                    .ThenInclude(e => e.Departments)
-                .Include(e => e.Positions)
-                .Include(e => e.Statuses)
-            .AsNoTracking()
-            .ToListAsync();
 
+            if (await _userManager.IsInRoleAsync(await _userManager.FindByNameAsync(User.Identity.Name), "PracownikHR"))
+            {
+                viewModel.Employments = await _context.Employments
+                    .Include(e => e.Offices)
+                        .ThenInclude(e => e.Departments)
+                    .Include(e => e.Positions)
+                    .Include(e => e.Statuses)
+                    .Where(e => e.IDStatus == 1)
+                    .AsNoTracking()
+                    .ToListAsync();
+            }
+
+            else if (await _userManager.IsInRoleAsync(await _userManager.FindByNameAsync(User.Identity.Name), "AdministratorAD"))
+            {
+                viewModel.Employments = await _context.Employments
+                    .Include(e => e.Offices)
+                        .ThenInclude(e => e.Departments)
+                    .Include(e => e.Positions)
+                    .Include(e => e.Statuses)
+                    .Where(e => e.IDStatus == 2 || e.IDStatus == 3)
+                    .AsNoTracking()
+                    .ToListAsync();
+            }
+
+            else if (await _userManager.IsInRoleAsync(await _userManager.FindByNameAsync(User.Identity.Name), "AdministratorAplikacji"))
+            {
+                viewModel.Employments = await _context.Employments
+                    .Include(e => e.Offices)
+                        .ThenInclude(e => e.Departments)
+                    .Include(e => e.Positions)
+                    .Include(e => e.Statuses)
+                    .AsNoTracking()
+                    .ToListAsync();
+            }
             return View(viewModel);
         }
 
-        // GET: Employments/Details/5
-        public async Task<IActionResult> Details(int? id)
-        {
-            if (id == null)
-            {
-                return NotFound();
-            }
-
-            var employment = await _context.Employments
-                .Include(e => e.Offices)
-                .FirstOrDefaultAsync(m => m.IDEmployment == id);
-            if (employment == null)
-            {
-                return NotFound();
-            }
-
-            return View(employment);
-        }
-
-        // GET: Employments/Create
+        //-----------------------------------GET: Employments/Create
+        [Authorize(Roles = "PracownikHR, AdministratorAplikacji")]
         public IActionResult Create()
         {
             List<Office> officessList = new List<Office>();
 
-            //Getting Data form Database Using EntityFrameworkCore
+            //--------------------------------Getting Data form Database Using EntityFrameworkCore
             officessList = (from office in _context.Offices
                            select office).ToList();
 
-            //Inserting Select Item in List
+            //-------------------------------Inserting Select Item in List
             officessList.Insert(0, new Office { IDOffice = 0, NameOffice = "Wybierz biuro" });
 
-            //Assigning officessList to ViewBag.ListofOffice
+            //-------------------------------Assigning officessList to ViewBag.ListofOffice
 
             ViewBag.ListofOffice = officessList;
 
@@ -83,14 +89,14 @@ namespace SZZP2._2.Controllers
             return View();
         }
 
-        // POST: Employments/Create
+        // -----------------------------------POST: Employments/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("IDEmployment,Name,Surname,NrSap,DateEmployment,EndContract,IDOffice,OfficeSymbol,IDDepartment,IDPosition,IDStatus")] Employment employment)
         {
-            //Validation
+            //-----------------------------------Validation
             if (ModelState.IsValid)
             {
                 _context.Add(employment);
@@ -98,56 +104,64 @@ namespace SZZP2._2.Controllers
                 return RedirectToAction(nameof(Index));
             }
 
-            //Getting selected Value
+            //-----------------------------------Getting selected Value
             var IDDepartment = HttpContext.Request.Form["IDDepartment"].ToString();
 
-            //Setting Data back to ViewvBag after Posting Form
+            //-----------------------------------Setting Data back to ViewvBag after Posting Form
             List<Office> officessList = new List<Office>();
             officessList = (from office in _context.Offices
                            select office).ToList();
             officessList.Insert(0, new Office { IDOffice = 0, NameOffice = "Wybierz biuro" });
 
-            //Assigning officessList to ViewBag.ListofOffice
+            //-----------------------------------Assigning officessList to ViewBag.ListofOffice
             ViewBag.ListofOffice = officessList;
 
             PopulateStatusesDropDownList(employment.IDStatus);
             PopulatePositionsDropDownList(employment.IDPosition);
-            //PopulateDepartmentsDropDownList(employment.IDDepartment);
-            //PopulateOfficesDropDownList(employment.IDOffice);
-            //ViewData["IDOffice"] = new SelectList(_context.Offices, "IDOffice", "IDOffice", employment.IDOffice);
+
             return View(employment);
         }
 
-        // GET: Employments/Edit/5
+        //-----------------------------------GET: Employments/Edit/5
         public async Task<IActionResult> Edit(int? id)
         {
-
-            PopulateStatusesDropDownList();
-            PopulatePositionsDropDownList();
-            //PopulateDepartmentsDropDownList();
-            //PopulateOfficesDropDownList();
-
-            //if (id == null)
-            //{
-            //    return NotFound();
-            //}
+            //-------------------------------Validation
 
             var employment = await _context.Employments.FindAsync(id);
             if (employment == null)
             {
                 return NotFound();
             }
-            //ViewData["IDOffice"] = new SelectList(_context.Offices, "IDOffice", "IDOffice", employment.IDOffice);
+
+            List<Office> officessList = new List<Office>();
+
+            //--------------------------------Getting Data form Database Using EntityFrameworkCore
+            officessList = (from office in _context.Offices
+                            select office).ToList();
+
+            //-------------------------------Inserting Select Item in List
+            officessList.Insert(0, new Office { IDOffice = 0, NameOffice = "Wybierz biuro" });
+
+            //-------------------------------Assigning officessList to ViewBag.ListofOffice
+
+            ViewBag.ListofOffice = officessList;
+
+
+            PopulateStatusesDropDownList();
+            PopulatePositionsDropDownList();
+
+
             return View(employment);
         }
 
-        // POST: Employments/Edit/5
+        // -----------------------------------POST: Employments/Edit/5
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Edit(int id, [Bind("IDEmployment,Name,Surname,NrSap,DateEmployment,EndContract,IDOffice,OfficeSymbol,IDDepartment,IDPosition,IDStatus")] Employment employment)
         {
+            //------------------------------Validation
             if (id != employment.IDEmployment)
             {
                 return NotFound();
@@ -173,18 +187,26 @@ namespace SZZP2._2.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
-            //ViewData["IDOffice"] = new SelectList(_context.Offices, "IDOffice", "IDOffice", employment.IDOffice);
 
+            var IDDepartment = HttpContext.Request.Form["IDDepartment"].ToString();
+
+            //-----------------------------------Setting Data back to ViewvBag after Posting Form
+            List<Office> officessList = new List<Office>();
+            officessList = (from office in _context.Offices
+                            select office).ToList();
+            officessList.Insert(0, new Office { IDOffice = 0, NameOffice = "Wybierz biuro" });
+
+            //-----------------------------------Assigning officessList to ViewBag.ListofOffice
+            ViewBag.ListofOffice = officessList;
 
             PopulateStatusesDropDownList(employment.IDStatus);
             PopulatePositionsDropDownList(employment.IDPosition);
-            //PopulateDepartmentsDropDownList(employment.IDDepartment);
-            //PopulateOfficesDropDownList(employment.IDOffice);
+
 
             return View(employment);
         }
 
-        // GET: Employments/Delete/5
+        //-----------------------------------GET: Employments/Delete/5
         public async Task<IActionResult> Delete(int? id)
         {
             if (id == null)
@@ -206,7 +228,7 @@ namespace SZZP2._2.Controllers
             return View(employment);
         }
 
-        // POST: Employments/Delete/5
+        //----------------------------------- POST: Employments/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
@@ -221,7 +243,6 @@ namespace SZZP2._2.Controllers
         {
             return _context.Employments.Any(e => e.IDEmployment == id);
         }
-
 
 
         private void PopulateStatusesDropDownList(object selectedStatus = null)
@@ -244,34 +265,37 @@ namespace SZZP2._2.Controllers
         {
             List<Department> departmentsList = new List<Department>();
 
-            //Getting Data from Database Using EntityFramework
+            //-----------------------------------Getting Data from Database Using EntityFramework
             departmentsList = (from department in _context.Departments
                               where department.IDOffice == IDOffice
                               select department).ToList();
 
-            //Inserting Select Item in List
+            //-----------------------------------Inserting Select Item in List
             departmentsList.Insert(0, new Department { IDDepartment = 0, NameDepartment = "Wybierz wydział" });
             
             return Json(departmentsList);
         }
 
+        //-----------------------------------GET: Employments/Details/5
+        public async Task<IActionResult> Details(int? id)
+        {
+            if (id == null)
+            {
+                return NotFound();
+            }
+
+            var employment = await _context.Employments
+                .Include(e => e.Offices)
+                .FirstOrDefaultAsync(m => m.IDEmployment == id);
+            if (employment == null)
+            {
+                return NotFound();
+            }
+
+            return View(employment);
+        }
+
+
     }
 }
-
-
-//private void PopulateOfficesDropDownList(object selectedOffice = null)
-//{
-//    var officesQuery = from d in _context.Offices
-//                       orderby d.NameOffice
-//                       select d;
-//    ViewBag.IDOffice = new SelectList(officesQuery.AsNoTracking(), "IDOffice", "NameOffice", selectedOffice);
-//}
-
-//private void PopulateDepartmentsDropDownList(object selectedDepartment = null)
-//{
-//    var departmentsQuery = from d in _context.Departments
-//                           orderby d.NameDepartment
-//                           select d;
-//    ViewBag.IDDepartment = new SelectList(departmentsQuery.AsNoTracking(), "IDDepartment", "NameDepartment", selectedDepartment);
-//}
 

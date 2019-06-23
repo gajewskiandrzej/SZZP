@@ -4,63 +4,105 @@
     ViewData["Title"] = "Index";
 }
 
-<h2>Lista nowo zatrudnionych pracowników</h2>
+<div class="top-buffer"></div>
+<div class="panel panel-primary">
 
-<p>
-    <a asp-action="Create" class="btn btn-primary">Dodaj nowego pracownika</a>
-</p>
-<table class="table table-striped table-responsive">
-    <thead>
-        <tr style="font-size:13px" class="small text-left">
-            <th>Imię</th>
-            <th>Nazwisko</th>
-            <th>NrSap</th>
-            <th>Data Zatrudnienia</th>
-            <th>Koniec umowy</th>
-            <th>Biuro</th>
-            @*<th>Wydział</th>*@
-            <th>Stanowisko</th>
-            <th>Status</th>
-            <th></th>
-        </tr>
-    </thead>
-    <tbody>
-@foreach (var item in Model.Employments) {
-        <tr style="font-size:13px" class="small">
-            <td>
-                @Html.DisplayFor(modelItem => item.Name)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Surname)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.NrSap)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.DateEmployment)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.EndContract)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Offices.NameOffice)
-            </td>
-            @*<td>
+    <div class="panel-heading panel-head">Lista nowo zatrudnionych pracowników</div>
+    <div class="panel-body">
+        <div class="btn-group">
+            @if (User.Identity.IsAuthenticated)
+            {
+                @if (User.IsInRole("PracownikHR"))
+                {
+                    <a asp-action="Create" class="btn btn-primary">
+                        <i class="glyphicon glyphicon-plus"></i> Dodaj nowego pracownika
+                    </a>
+                }
 
-            </td>*@
-            <td>
-                @Html.DisplayFor(modelItem => item.Positions.NamePosition)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Statuses.NameStatus)
-            </td>
+                else if (User.IsInRole("AdministratorAD"))
+                {
+                    <a asp-controller="ADUsers" asp-action="AddADUsers" class="btn btn-primary">
+                        <i class="glyphicon glyphicon-plus"></i> Dodaj nowych pracowników do Active Directory
+                    </a>
+                }
 
-            <td>
-                <a asp-action="Edit" class="btn btn-success" asp-route-id="@item.IDEmployment">Edycja</a> |
-                <!--<a asp-action="Details" class="btn btn-info" asp-route-id="@item.IDEmployment">Szczegóły</a> |-->
-                <a asp-action="Delete" class="btn btn-danger" asp-route-id="@item.IDEmployment">Usuń</a>
-            </td>
-        </tr>
-}
-    </tbody>
-</table>
+                else if (User.IsInRole("AdministratorAplikacji"))
+                {
+                    <div class="clearfix">
+                        <a asp-action="Create" class="btn btn-primary">
+                            <i class="glyphicon glyphicon-plus"></i> Dodaj nowego pracownika
+                        </a>
+                    </div>
+                    <p></p>
+                    <div class="float-right">
+                        <a asp-controller="ADUsers" asp-action="AddADUsers" class="btn btn-success">
+                            <i class="glyphicon glyphicon-plus"></i> Dodaj nowych pracowników do Active Directory
+                        </a>
+                    </div>
+                }
+            }
+
+        </div>
+        <hr>
+        <div class="top-buffer"></div>
+        <table class="table table-striped table-responsive table-condensed">
+            <thead>
+                <tr style="font-size:13px" class="small text-left">
+                    <th>Imię</th>
+                    <th>Nazwisko</th>
+                    <th>NrSap</th>
+                    <th>Data Zatrudnienia</th>
+                    <th>Koniec umowy</th>
+                    <th>Biuro</th>
+                    @*<th>Wydział</th>*@
+                    <th>Stanowisko</th>
+                    <th>Status</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model.Employments)
+                {
+                    <tr style="font-size:13px" class="small">
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Name)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Surname)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.NrSap)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.DateEmployment)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.EndContract)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Offices.NameOffice)
+                        </td>
+                        @*<td>
+
+                        </td>*@
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Positions.NamePosition)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Statuses.NameStatus)
+                        </td>
+
+                        <td>
+                            <a asp-action="Edit" class="btn btn-success" asp-route-id="@item.IDEmployment">
+                                <i class="glyphicon glyphicon-pencil"></i> Edycja</a> |
+                            <!--<a asp-action="Details" class="btn btn-info" asp-route-id="@item.IDEmployment">Szczegóły</a> |-->
+                            <a asp-action="Delete" class="btn btn-danger" asp-route-id="@item.IDEmployment">
+                                <i class="glyphicon glyphicon-trash"></i>  Usuń
+                            </a>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>

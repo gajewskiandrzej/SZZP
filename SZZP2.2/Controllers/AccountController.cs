@@ -5,6 +5,8 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using SZZP2._2.Models.SZZPViewModels;
+using Microsoft.AspNetCore.Authorization;
+using SZZP2._2.Data;
 
 // For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
@@ -12,10 +14,10 @@ namespace SZZP2._2.Controllers
 {
     public class AccountController : Controller
     {
-        private readonly SignInManager<IdentityUser>_signInManager;
-        private readonly UserManager<IdentityUser>_userManager;
+        private readonly SignInManager<ApplicationUser> _signInManager;
+        private readonly UserManager<ApplicationUser> _userManager;
 
-        public AccountController(SignInManager<IdentityUser> signInManager, UserManager<IdentityUser> userManager)
+        public AccountController(SignInManager<ApplicationUser> signInManager, UserManager<ApplicationUser> userManager)
         {
             _signInManager = signInManager;
             _userManager = userManager;
@@ -31,6 +33,7 @@ namespace SZZP2._2.Controllers
         {
             if (!ModelState.IsValid)
                 return View(loginVM);
+
             var user = await _userManager.FindByNameAsync(loginVM.UserName);
 
             if(user != null)
@@ -58,7 +61,7 @@ namespace SZZP2._2.Controllers
         {
             if(ModelState.IsValid)
             {
-                var user = new IdentityUser() { UserName = loginVM.UserName };
+                var user = new ApplicationUser() { UserName = loginVM.UserName };
                 var result = await _userManager.CreateAsync(user, loginVM.Password);
 
                 if(result.Succeeded)
@@ -75,6 +78,11 @@ namespace SZZP2._2.Controllers
         {
             await _signInManager.SignOutAsync();
             return RedirectToAction("Index", "Home");
+        }
+
+        public IActionResult AccessDenied()
+        {
+            return View();
         }
     }
 }

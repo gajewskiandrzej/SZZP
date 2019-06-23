@@ -1,0 +1,31 @@
+﻿@model SZZP2._2.Models.SZZPViewModels.DeleteUserViewModel
+@using SZZP2._2.Models
+
+
+    <h2>Usuwanie użytkownika</h2>
+
+    <h3>Masz zamiar trwale usunąć użytkownika z bazy danych!</h3>
+    <div>
+
+        <hr />
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.Name)
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.Name)
+            </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.Email)
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.Email)
+            </dd>
+        </dl>
+
+        <form asp-action="DeleteUser">
+            <input type="hidden" asp-for="Id" />
+            <input type="submit" value="Usuń" class="btn btn-danger" /> |
+            <a asp-action="Index" class="btn btn-primary">Powrót do listy użytkowników</a>
+        </form>
+    </div>

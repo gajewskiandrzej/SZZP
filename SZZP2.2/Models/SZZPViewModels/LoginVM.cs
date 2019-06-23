@@ -11,5 +11,6 @@ namespace SZZP2._2.Models.SZZPViewModels
         [Display(Name = "Hasło")]
         [DataType(DataType.Password)]
         public string Password { get; set; }
+
     }
 }

@@ -1,27 +1,4 @@
 ﻿@model SZZP2._2.Models.Employment
-@{
-
-
-    @*<script type="text/javascript">
-        $(document).ready(function () {
-            $('#IDOffice').change(function () {
-                var url = '@Url.Content("~/")' + "Employments/GetDepartment";
-                var ddlsource = "#IDOffice";
-                    $.getJSON(url, { id: $(ddlsource).val() }, function (data) {
-                        var items = '';
-                        $("#IDDepartment").empty();
-                        $.each(data, function (i, department) {
-                            items += "<option value='" + department.value + "'>" + department.text + "</option>";
-                        });
-                        $('#IDDepartment').html(items);
-                    });
-            });
-        });
-        </script>*@
-
-}
-<!--ViewData["Title"] = "Create";-->
-
 
 <h2>Zatrudnianie nowego pracownika</h2>
 
@@ -119,10 +96,3 @@
 
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
 }
-
-
-@*<div class="form-group">
-        <label asp-for="OfficeSymbol" class="control-label"></label>
-        <input asp-for="OfficeSymbol" class="form-control" />
-        <span asp-validation-for="OfficeSymbol" class="text-danger"></span>
-    </div>*@

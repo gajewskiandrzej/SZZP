@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
 using SZZP2._2.Models;
 
@@ -6,6 +7,7 @@ namespace SZZP2._2.Controllers
 {
     public class AdministratorController : Controller
     {
+        [Authorize(Roles = "AdministratorAplikacji")]
         public IActionResult Index()
         {
             return View();

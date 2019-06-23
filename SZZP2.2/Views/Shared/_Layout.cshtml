@@ -1,6 +1,10 @@
 ﻿@using Microsoft.AspNetCore.Identity
+@using SZZP2._2.Data
+
+@inject SignInManager<ApplicationUser> SignInManager
+@inject UserManager<ApplicationUser> UserManager
+
 <!DOCTYPE html>
-@inject SignInManager<IdentityUser> SignInManager
 
 <html>
 <head>
@@ -34,33 +38,51 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand">SZZP</a>
+                <a asp-area="" asp-controller="Home" asp-action="Index" class="navbar-brand">SZZP</a>
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
-                    <li><a asp-area="" asp-controller="Home" asp-action="Index">Start</a></li>
+                    @*<li><a asp-area="" asp-controller="Home" asp-action="Index">Start</a></li>*@
                     <li><a asp-area="" asp-controller="Employments" asp-action="Index">Zatrudnienia</a></li>
                     <li><a asp-area="" asp-controller="Modyfications" asp-action="Modyfication">Modyfikacje</a></li>
                     <li><a asp-area="" asp-controller="Dismissals" asp-action="Dismissal">Zwolnienia</a></li>
-                    <li><a asp-area="" asp-controller="Administrator" asp-action="Index">Administracja</a></li>
+                    <li>
+                        @if (User.Identity.IsAuthenticated)
+                        {
+                            @if (User.IsInRole("AdministratorAplikacji") || User.IsInRole("AdministratorAD"))
+                            {
+                                <a asp-area="" asp-controller="ADUsers" asp-action="Index">Active Directory</a>
+                            }
+                        }
+                    </li>
+
+                    <li>
+                        @if (User.Identity.IsAuthenticated)
+                        {
+                            @if (User.IsInRole("AdministratorAplikacji"))
+                            {
+                                <a asp-area="" asp-controller="Administrator" asp-action="Index">Administracja</a>
+                            }
+                        }
+                    </li>
                 </ul>
 
 
                 @if (SignInManager.IsSignedIn(User))
                 {
-                <form asp-area="" asp-controller="Account" asp-action="Logout" id="logoutForm"
-                      method="post" class="navbar-right">
-                    <p class="nav navbar-text ">Witaj, @User.Identity.Name!</p>
-                    <ul class="nav navbar-right">
-                        <li><a href="javascript:document.getElementById('logoutForm').submit()">Wyloguj</a></li>
-                    </ul>
-                </form>
+                    <form asp-area="" asp-controller="Account" asp-action="Logout" id="logoutForm"
+                          method="post" class="navbar-right">
+                        <p class="nav navbar-text ">Witaj, @User.Identity.Name!</p>
+                        <ul class="nav navbar-nav navbar-right">
+                            <li><a href="javascript:document.getElementById('logoutForm').submit()">Wyloguj</a></li>
+                        </ul>
+                    </form>
 
                 }
                 else
                 {
                     <ul class="nav navbar-nav navbar-right">
-                        <li><a id="registerLink" asp-area="" asp-controller="Account" asp-action="Register">Rejestracja</a></li>
+                        @*<li><a id="registerLink" asp-area="" asp-controller="Account" asp-action="Register">Rejestracja</a></li>*@
                         <li><a id="loginLink" asp-area="" asp-controller="Account" asp-action="Login">Logowanie</a></li>
                     </ul>
                 }

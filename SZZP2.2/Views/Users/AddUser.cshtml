@@ -1,0 +1,67 @@
+﻿@model SZZP2._2.Models.SZZPViewModels.UserViewModel
+@using SZZP2._2.Models
+
+@{
+    ViewData["Title"] = "Add User";
+}
+
+<h2>Dodawanie nowego użytkownika</h2>
+
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="AddUser" role="form">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            @*<div class="form-group">
+            <label asp-for="Name" class="control-label"></label>
+            <input asp-for="Name" class="form-control" />
+            <span asp-validation-for="Name" class="text-danger"></span>
+        </div>*@
+
+            <div class="form-group">
+                <label asp-for="UserName" control-label"></label>
+                <input asp-for="UserName" class="form-control" />
+                <span asp-validation-for="UserName" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="Email" control-label"></label>
+                <input asp-for="Email" class="form-control" />
+                <span asp-validation-for="Email" class="text-danger"></span>
+            </div>
+
+
+            <div class="form-group">
+            <label asp-for="ApplicationRoleId" control-label"></label>
+            <select asp-for="ApplicationRoleId" asp-items="@Model.ApplicationRoles" class="form-control">
+                <option>Wybierz rolę użytkownika</option>
+            </select>
+        </div>
+
+
+            <div class="form-group">
+                <label asp-for="Password" control-label"></label>
+                <input asp-for="Password" class="form-control" />
+                <span asp-validation-for="Password" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="ConfirmPassword" control-label"></label>
+                <input asp-for="ConfirmPassword" class="form-control" />
+                <span asp-validation-for="ConfirmPassword" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <input type="submit" value="Dodaj użytkownika" class="btn btn-success" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index" class="btn btn-primary">Powrót do listy użytkowników</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
+

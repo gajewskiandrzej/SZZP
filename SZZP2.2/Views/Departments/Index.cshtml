@@ -7,11 +7,12 @@
 <h2>Lista Wydziałów</h2>
 
 <p>
-    <a asp-action="Create" class=" btn btn-primary">Dodaj nowy wydział</a>
+    <a asp-action="Create" class=" btn btn-primary">
+        <i class="glyphicon glyphicon-plus"></i> Dodaj nowy wydział</a>
 </p>
 <table class="table">
     <thead>
-        <tr>
+        <tr style="font-size:18px">
             <th>
                 @Html.DisplayNameFor(model => model.NameDepartment)
             </th>
@@ -19,14 +20,14 @@
                 @Html.DisplayNameFor(model => model.SymbolDeprtament)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Offices)
+                @Html.DisplayNameFor(model => model.Offices.NameOffice)
             </th>
             <th></th>
         </tr>
     </thead>
     <tbody>
 @foreach (var item in Model) {
-        <tr>
+        <tr style="font-size:15px">
             <td>
                 @Html.DisplayFor(modelItem => item.NameDepartment)
             </td>
@@ -37,8 +38,10 @@
                 @Html.DisplayFor(modelItem => item.Offices.NameOffice)
             </td>
             <td>
-                <a asp-action="Edit" class="btn btn-success" asp-route-id="@item.IDDepartment">Edycja</a> |
-                <a asp-action="Delete" class="btn btn-danger" asp-route-id="@item.IDDepartment">Usuń</a>
+                <a asp-action="Edit" class="btn btn-success" asp-route-id="@item.IDDepartment"> 
+                <i class="glyphicon glyphicon-pencil"></i> Edycja</a> |
+                <a asp-action="Delete" class="btn btn-danger" asp-route-id="@item.IDDepartment">
+                    <i class="glyphicon glyphicon-trash"></i> Usuń</a>
             </td>
         </tr>
 }
