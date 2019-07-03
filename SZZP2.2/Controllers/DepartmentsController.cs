@@ -48,14 +48,11 @@ namespace SZZP2._2.Controllers
         // GET: Departments/Create
         public IActionResult Create()
         {
-            //ViewData["IDOffice"] = new SelectList(_context.Offices, "IDOffice", "IDOffice");
             PopulateOfficesDropDownList();
             return View();
         }
 
         // POST: Departments/Create
-        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
-        // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("IDDepartment,IDOffice,NameDepartment,SymbolDeprtament")] Department department)
@@ -66,7 +63,6 @@ namespace SZZP2._2.Controllers
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            //ViewData["IDOffice"] = new SelectList(_context.Offices, "IDOffice", "IDOffice", department.IDOffice);
             PopulateOfficesDropDownList(department.IDOffice);
             return View(department);
         }
@@ -84,14 +80,11 @@ namespace SZZP2._2.Controllers
             {
                 return NotFound();
             }
-            //ViewData["IDOffice"] = new SelectList(_context.Offices, "IDOffice", "IDOffice", department.IDOffice);
             PopulateOfficesDropDownList(department.IDOffice);
             return View(department);
         }
 
         // POST: Departments/Edit/5
-        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
-        // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Edit(int id, [Bind("IDDepartment,IDOffice,NameDepartment,SymbolDeprtament")] Department department)
@@ -164,8 +157,8 @@ namespace SZZP2._2.Controllers
         private void PopulateOfficesDropDownList(object selectedOffice = null)
         {
             var officesQuery = from d in _context.Offices
-                                   orderby d.NameOffice
-                                   select d;
+                               orderby d.NameOffice
+                               select d;
             ViewBag.IDOffice = new SelectList(officesQuery.AsNoTracking(), "IDOffice", "NameOffice", selectedOffice);
         }
     }

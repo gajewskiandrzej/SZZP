@@ -21,15 +21,22 @@ namespace SZZP2._2.Models
         public int IDOffice { get; set; }
         [Display(Name = "Nazwa Wydziału")]
         public int IDDepartment { get; set; }
-        [Display(Name = "Nowe Biuro")]
-        public int? NewIDOffice { get; set; }
-        [Display(Name = "Nowy Wydział")]
-        public int? NewIDDepartament { get; set; }
-        [Display(Name = "Nowe nazwisko")]
-        public string NewSurname { get; set; }
+        [DataType(DataType.Date)]
+        [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
+        [Display(Name = "Data zatrudnienia")]
+        public DateTime DateEmployment { get; set; }
+        [DataType(DataType.Date)]
+        [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
+        [Display(Name = "Koniec umowy")]
+        public DateTime? EndContract { get; set; }
+        [Display(Name = "Stanowisko")]
+        public int IDPosition { get; set; }
         [Display(Name = "Status")]
-        public string StatusDataChange { get; set; }
+        public int IDStatus { get; set; }
 
         public ADUser ADUsers { get; set; }
+        public Office Offices { get; set; }
+        public Status Statuses { get; set; }
+        //public Position Positions { get; set; }
     }
 }

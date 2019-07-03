@@ -1,7 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Threading.Tasks;
 using SZZP2._2.Models;
 
 namespace SZZP2._2.Data
@@ -14,7 +12,7 @@ namespace SZZP2._2.Data
 
 
             //Look for any offices.
-            if(context.Offices.Any())
+            if (context.Offices.Any())
             {
                 return; //DB has been seeded
             }
@@ -47,7 +45,7 @@ namespace SZZP2._2.Data
                 new Office{NameOffice="Biuro Zakupów",SymbolOffice="KFZ"},
                 new Office{NameOffice="Biuro Zarządu",SymbolOffice="KOZ"},
             };
-            foreach(Office o in offices)
+            foreach (Office o in offices)
             {
                 context.Offices.Add(o);
             }

@@ -51,8 +51,6 @@ namespace SZZP2._2.Controllers
         }
 
         // POST: Offices/Create
-        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
-        // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("IDOffice,NameOffice,SymbolOffice")] Office office)
@@ -83,8 +81,6 @@ namespace SZZP2._2.Controllers
         }
 
         // POST: Offices/Edit/5
-        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
-        // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Edit(int id, [Bind("IDOffice,NameOffice,SymbolOffice")] Office office)
@@ -150,118 +146,6 @@ namespace SZZP2._2.Controllers
         {
             return _context.Offices.Any(e => e.IDOffice == id);
         }
-
-    //    // GET: Departments/Create
-    //    public IActionResult CreateDepartment()
-    //    {
-    //        ViewData["IDOffice"] = new SelectList(_context.Offices, "IDOffice", "IDOffice");
-    //        return View();
-    //    }
-
-    //    // POST: Departments/Create
-    //    // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
-    //    // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
-    //    [HttpPost]
-    //    [ValidateAntiForgeryToken]
-    //    public async Task<IActionResult> CreateDepartment([Bind("IDDepartment,IDOffice,NameDepartment,SymbolDeprtament")] Department department)
-    //    {
-    //        if (ModelState.IsValid)
-    //        {
-    //            _context.Add(department);
-    //            await _context.SaveChangesAsync();
-    //            return RedirectToAction(nameof(Details));
-    //        }
-    //        ViewData["IDOffice"] = new SelectList(_context.Offices, "IDOffice", "IDOffice", department.IDOffice);         
-    //        return View(department);
-    //    }
-
-    //    // GET: Departments/Edit/5
-    //    public async Task<IActionResult> EditDepartment(int? id)
-    //    {
-    //        if (id == null)
-    //        {
-    //            return NotFound();
-    //        }
-
-    //        var department = await _context.Departments.FindAsync(id);
-    //        if (department == null)
-    //        {
-    //            return NotFound();
-    //        }
-    //        ViewData["IDOffice"] = new SelectList(_context.Offices, "IDOffice", "IDOffice", department.IDOffice);
-    //        return View(department);
-    //    }
-
-    //    // POST: Departments/Edit/5
-    //    // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
-    //    // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
-    //    [HttpPost]
-    //    [ValidateAntiForgeryToken]
-    //    public async Task<IActionResult> EditDepartment(int id, [Bind("IDDepartment,IDOffice,NameDepartment,SymbolDeprtament")] Department department)
-    //    {
-    //        if (id != department.IDDepartment)
-    //        {
-    //            return NotFound();
-    //        }
-
-    //        if (ModelState.IsValid)
-    //        {
-    //            try
-    //            {
-    //                _context.Update(department);
-    //                await _context.SaveChangesAsync();
-    //            }
-    //            catch (DbUpdateConcurrencyException)
-    //            {
-    //                if (!DepartmentExists(department.IDDepartment))
-    //                {
-    //                    return NotFound();
-    //                }
-    //                else
-    //                {
-    //                    throw;
-    //                }
-    //            }
-    //            return RedirectToAction(nameof(Details));
-    //        }
-    //        ViewData["IDOffice"] = new SelectList(_context.Offices, "IDOffice", "IDOffice", department.IDOffice);
-    //        return View(department);
-    //    }
-
-    //    // GET: Departments/Delete/5
-    //    public async Task<IActionResult> DeleteDepartment(int? id)
-    //    {
-    //        if (id == null)
-    //        {
-    //            return NotFound();
-    //        }
-
-    //        var department = await _context.Departments
-    //            .Include(d => d.Offices)
-    //            .FirstOrDefaultAsync(m => m.IDDepartment == id);
-    //        if (department == null)
-    //        {
-    //            return NotFound();
-    //        }
-
-    //        return View(department);
-    //    }
-
-    //    // POST: Departments/Delete/5
-    //    [HttpPost, ActionName("DeleteDepartment")]
-    //    [ValidateAntiForgeryToken]
-    //    public async Task<IActionResult> DeleteDepartmentConfirmed(int id)
-    //    {
-    //        var department = await _context.Departments.FindAsync(id);
-    //        _context.Departments.Remove(department);
-    //        await _context.SaveChangesAsync();
-    //        return RedirectToAction(nameof(Details));
-    //    }
-
-    //    private bool DepartmentExists(int id)
-    //    {
-    //        return _context.Departments.Any(e => e.IDDepartment == id);
-    //    }
     }
 }
 

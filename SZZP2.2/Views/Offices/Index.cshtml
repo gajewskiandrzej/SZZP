@@ -4,41 +4,53 @@
     ViewData["Title"] = "Lista Biur PKP S.A.";
 }
 
-<h2>Lista Biur PKP S.A.</h2>
+<div class="top-buffer"></div>
+<div class="panel panel-primary">
 
-<p>
-    <a asp-action="Create" class="btn btn-primary">
-        <i class="glyphicon glyphicon-plus"></i> Dodaj nowe biuro
-    </a>
-</p>
-<table class="table">
-    <thead>
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.NameOffice)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.SymbolOffice)
-            </th>
-            <th>Operacje</th>
-        </tr>
-    </thead>
-    <tbody>
-@foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.NameOffice)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.SymbolOffice)
-            </td>
-            <td>
-                <a asp-action="Details" class="btn btn-success" asp-route-id="@item.IDOffice">
-                    <i class="glyphicon glyphicon-info-sign"></i> Szczegóły</a> |
-                <a asp-action="Delete" class="btn btn-danger" asp-route-id="@item.IDOffice">
-                    <i class="glyphicon glyphicon-trash"></i> Usuń</a>
-            </td>
-        </tr>
-}
-    </tbody>
-</table>
+    <div class="panel-heading panel-head">Lista Biur PKP S.A.</div>
+    <div class="panel-body">
+        <div class="btn-group">
+
+            <p>
+                <a asp-action="Create" class="btn btn-primary">
+                    <i class="glyphicon glyphicon-plus"></i> Dodaj nowe biuro
+                </a>
+            </p>
+        </div>
+        <div class="top-buffer"></div>
+        <table class="table table-striped table-responsive table-condensed">
+            <thead>
+                <tr>
+                    <th>
+                        @Html.DisplayNameFor(model => model.NameOffice)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.SymbolOffice)
+                    </th>
+                    <th>Operacje</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.NameOffice)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.SymbolOffice)
+                        </td>
+                        <td>
+                            <a asp-action="Details" class="btn btn-success" asp-route-id="@item.IDOffice">
+                                <i class="glyphicon glyphicon-info-sign"></i> Szczegóły
+                            </a> |
+                            <a asp-action="Delete" class="btn btn-danger" asp-route-id="@item.IDOffice">
+                                <i class="glyphicon glyphicon-trash"></i> Usuń
+                            </a>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>

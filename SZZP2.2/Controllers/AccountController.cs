@@ -1,14 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Identity;
+﻿using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
-using SZZP2._2.Models.SZZPViewModels;
-using Microsoft.AspNetCore.Authorization;
+using System.Threading.Tasks;
 using SZZP2._2.Data;
+using SZZP2._2.Models.SZZPViewModels;
 
-// For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
 namespace SZZP2._2.Controllers
 {
@@ -29,17 +24,17 @@ namespace SZZP2._2.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult>Login(LoginVM loginVM)
+        public async Task<IActionResult> Login(LoginVM loginVM)
         {
             if (!ModelState.IsValid)
                 return View(loginVM);
 
             var user = await _userManager.FindByNameAsync(loginVM.UserName);
 
-            if(user != null)
+            if (user != null)
             {
                 var result = await _signInManager.PasswordSignInAsync(user, loginVM.Password, false, false);
-                if(result.Succeeded)
+                if (result.Succeeded)
                 {
                     return RedirectToAction("Index", "Home");
                 }
@@ -59,12 +54,12 @@ namespace SZZP2._2.Controllers
         [HttpPost]
         public async Task<IActionResult> Register(LoginVM loginVM)
         {
-            if(ModelState.IsValid)
+            if (ModelState.IsValid)
             {
                 var user = new ApplicationUser() { UserName = loginVM.UserName };
                 var result = await _userManager.CreateAsync(user, loginVM.Password);
 
-                if(result.Succeeded)
+                if (result.Succeeded)
                 {
                     return RedirectToAction("Index", "Home");
                 }

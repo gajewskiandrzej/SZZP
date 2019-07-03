@@ -22,11 +22,13 @@ namespace SZZP2._2.Models
         [DataType(DataType.Date)]
         [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
         [Display(Name = "Data zwolnienia")]
-        public DateTime EndContract { get; set; }
+        public DateTime? EndContract { get; set; }
         [Display(Name = "Status")]
-        public string StatusDismissal { get; set; }
+        public int IDStatus { get; set; }
 
 
         public ADUser ADUsers { get; set; }
+        public Office Offices { get; set; }
+        public Status Statuses { get; set; }
     }
 }

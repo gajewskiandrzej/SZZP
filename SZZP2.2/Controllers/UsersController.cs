@@ -1,5 +1,4 @@
 ﻿using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
@@ -65,7 +64,7 @@ namespace SZZP2._2.Controllers
                 IdentityResult result = await userManager.CreateAsync(user, model.Password);
                 if (result.Succeeded)
                 {
-                   ApplicationRole applicationRole = await roleManager.FindByIdAsync(model.ApplicationRoleId);
+                    ApplicationRole applicationRole = await roleManager.FindByIdAsync(model.ApplicationRoleId);
                     if (applicationRole != null)
                     {
                         IdentityResult roleResult = await userManager.AddToRoleAsync(user, applicationRole.Name);
@@ -80,7 +79,7 @@ namespace SZZP2._2.Controllers
         }
 
         [HttpGet]
-        public async Task<IActionResult>EditUser(string id)
+        public async Task<IActionResult> EditUser(string id)
         {
             EditUserViewModel model = new EditUserViewModel();
             model.ApplicationRoles = roleManager.Roles.Select(r => new SelectListItem
@@ -103,7 +102,7 @@ namespace SZZP2._2.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult>EditUser(string id, EditUserViewModel model)
+        public async Task<IActionResult> EditUser(string id, EditUserViewModel model)
         {
             if (ModelState.IsValid)
             {
@@ -140,7 +139,7 @@ namespace SZZP2._2.Controllers
         }
 
         [HttpGet]
-        public async Task<IActionResult>DeleteUser(string id)
+        public async Task<IActionResult> DeleteUser(string id)
         {
             //string name = string.Empty;
             DeleteUserViewModel model = new DeleteUserViewModel();
@@ -157,7 +156,7 @@ namespace SZZP2._2.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult>DeleteUser(string id, DeleteUserViewModel model)
+        public async Task<IActionResult> DeleteUser(string id, DeleteUserViewModel model)
         {
             if (!String.IsNullOrEmpty(id))
             {

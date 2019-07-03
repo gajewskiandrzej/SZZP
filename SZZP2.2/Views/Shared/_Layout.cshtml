@@ -44,8 +44,8 @@
                 <ul class="nav navbar-nav">
                     @*<li><a asp-area="" asp-controller="Home" asp-action="Index">Start</a></li>*@
                     <li><a asp-area="" asp-controller="Employments" asp-action="Index">Zatrudnienia</a></li>
-                    <li><a asp-area="" asp-controller="Modyfications" asp-action="Modyfication">Modyfikacje</a></li>
-                    <li><a asp-area="" asp-controller="Dismissals" asp-action="Dismissal">Zwolnienia</a></li>
+                    <li><a asp-area="" asp-controller="DataChanges" asp-action="Index">Modyfikacje</a></li>
+                    <li><a asp-area="" asp-controller="Dismissal" asp-action="Index">Zwolnienia</a></li>
                     <li>
                         @if (User.Identity.IsAuthenticated)
                         {

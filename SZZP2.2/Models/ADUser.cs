@@ -26,6 +26,7 @@ namespace SZZP2._2.Models
         [Display(Name = "Department")]
         public int IDDepartment { get; set; }
 
+
         public Office Office { get; set; }
         //public ICollection<APPUser> APPUsers { get; set; }
         public ICollection<DataChange> DataChanges { get; set; }

@@ -47,11 +47,11 @@
             @Html.DisplayFor(model => model.Offices.NameOffice)
         </dd>
         @*<dt style="text-align:left">
-            @Html.DisplayNameFor(model => model.Offices.Departments)
-        </dt>
-        <dd>
-            @Html.DisplayFor(model => model.Offices.Departments)
-        </dd>*@
+                @Html.DisplayNameFor(model => model.Offices.Departments)
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.Offices.Departments)
+            </dd>*@
         <dt style="text-align:left">
             @Html.DisplayNameFor(model => model.IDPosition)
         </dt>
@@ -65,10 +65,10 @@
             @Html.DisplayFor(model => model.Statuses.NameStatus)
         </dd>
     </dl>
-    
+
     <form asp-action="Delete">
         <input type="hidden" asp-for="IDEmployment" />
-        <input type="submit" value="Delete" class="btn btn-danger" /> |
+        <input type="submit" value="Usuń" class="btn btn-danger" /> |
         <a asp-action="Index" class="btn btn-primary">Powrót do listy</a>
     </form>
 </div>

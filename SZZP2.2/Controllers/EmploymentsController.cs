@@ -74,7 +74,7 @@ namespace SZZP2._2.Controllers
 
             //--------------------------------Getting Data form Database Using EntityFrameworkCore
             officessList = (from office in _context.Offices
-                           select office).ToList();
+                            select office).ToList();
 
             //-------------------------------Inserting Select Item in List
             officessList.Insert(0, new Office { IDOffice = 0, NameOffice = "Wybierz biuro" });
@@ -90,8 +90,6 @@ namespace SZZP2._2.Controllers
         }
 
         // -----------------------------------POST: Employments/Create
-        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
-        // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("IDEmployment,Name,Surname,NrSap,DateEmployment,EndContract,IDOffice,OfficeSymbol,IDDepartment,IDPosition,IDStatus")] Employment employment)
@@ -110,7 +108,7 @@ namespace SZZP2._2.Controllers
             //-----------------------------------Setting Data back to ViewvBag after Posting Form
             List<Office> officessList = new List<Office>();
             officessList = (from office in _context.Offices
-                           select office).ToList();
+                            select office).ToList();
             officessList.Insert(0, new Office { IDOffice = 0, NameOffice = "Wybierz biuro" });
 
             //-----------------------------------Assigning officessList to ViewBag.ListofOffice
@@ -155,8 +153,6 @@ namespace SZZP2._2.Controllers
         }
 
         // -----------------------------------POST: Employments/Edit/5
-        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
-        // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Edit(int id, [Bind("IDEmployment,Name,Surname,NrSap,DateEmployment,EndContract,IDOffice,OfficeSymbol,IDDepartment,IDPosition,IDStatus")] Employment employment)
@@ -250,7 +246,7 @@ namespace SZZP2._2.Controllers
             var statusesQuery = from s in _context.Statuses
                                 orderby s.IDStatus
                                 select s;
-            ViewBag.IDStatus = new SelectList(statusesQuery.AsNoTracking(),"IDStatus", "NameStatus", selectedStatus);
+            ViewBag.IDStatus = new SelectList(statusesQuery.AsNoTracking(), "IDStatus", "NameStatus", selectedStatus);
         }
 
         private void PopulatePositionsDropDownList(object selectedPosition = null)
@@ -261,18 +257,18 @@ namespace SZZP2._2.Controllers
             ViewBag.IDPosition = new SelectList(positionsQuery.AsNoTracking(), "IDPosition", "NamePosition", selectedPosition);
         }
 
-        public IActionResult GetDepartment (int IDOffice)
+        public IActionResult GetDepartment(int IDOffice)
         {
             List<Department> departmentsList = new List<Department>();
 
             //-----------------------------------Getting Data from Database Using EntityFramework
             departmentsList = (from department in _context.Departments
-                              where department.IDOffice == IDOffice
-                              select department).ToList();
+                               where department.IDOffice == IDOffice
+                               select department).ToList();
 
             //-----------------------------------Inserting Select Item in List
             departmentsList.Insert(0, new Department { IDDepartment = 0, NameDepartment = "Wybierz wydział" });
-            
+
             return Json(departmentsList);
         }
 

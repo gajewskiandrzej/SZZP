@@ -220,25 +220,29 @@ namespace SZZP2._2.Migrations
 
                     b.Property<DateTime>("DateChange");
 
+                    b.Property<DateTime>("DateEmployment");
+
+                    b.Property<DateTime?>("EndContract");
+
                     b.Property<int>("IDDepartment");
 
                     b.Property<int>("IDOffice");
 
+                    b.Property<int>("IDPosition");
+
+                    b.Property<int>("IDStatus");
+
                     b.Property<string>("Name");
 
-                    b.Property<int?>("NewIDDepartament");
-
-                    b.Property<int?>("NewIDOffice");
-
-                    b.Property<string>("NewSurname");
-
                     b.Property<string>("NrSap");
-
-                    b.Property<string>("StatusDataChange");
 
                     b.Property<string>("Surname");
 
                     b.HasKey("IDDataChange");
+
+                    b.HasIndex("IDOffice");
+
+                    b.HasIndex("IDStatus");
 
                     b.HasIndex("NrSap");
 
@@ -270,11 +274,13 @@ namespace SZZP2._2.Migrations
                         .ValueGeneratedOnAdd()
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<DateTime>("EndContract");
+                    b.Property<DateTime?>("EndContract");
 
                     b.Property<int>("IDDepartment");
 
                     b.Property<int>("IDOffice");
+
+                    b.Property<int>("IDStatus");
 
                     b.Property<string>("Name");
 
@@ -282,11 +288,13 @@ namespace SZZP2._2.Migrations
 
                     b.Property<int>("Position");
 
-                    b.Property<string>("StatusDismissal");
-
                     b.Property<string>("Surname");
 
                     b.HasKey("IDDismissal");
+
+                    b.HasIndex("IDOffice");
+
+                    b.HasIndex("IDStatus");
 
                     b.HasIndex("NrSap");
 
@@ -426,6 +434,16 @@ namespace SZZP2._2.Migrations
 
             modelBuilder.Entity("SZZP2._2.Models.DataChange", b =>
                 {
+                    b.HasOne("SZZP2._2.Models.Office", "Offices")
+                        .WithMany()
+                        .HasForeignKey("IDOffice")
+                        .OnDelete(DeleteBehavior.Cascade);
+
+                    b.HasOne("SZZP2._2.Models.Status", "Statuses")
+                        .WithMany()
+                        .HasForeignKey("IDStatus")
+                        .OnDelete(DeleteBehavior.Cascade);
+
                     b.HasOne("SZZP2._2.Models.ADUser", "ADUsers")
                         .WithMany("DataChanges")
                         .HasForeignKey("NrSap");
@@ -441,6 +459,16 @@ namespace SZZP2._2.Migrations
 
             modelBuilder.Entity("SZZP2._2.Models.Dismissal", b =>
                 {
+                    b.HasOne("SZZP2._2.Models.Office", "Offices")
+                        .WithMany()
+                        .HasForeignKey("IDOffice")
+                        .OnDelete(DeleteBehavior.Cascade);
+
+                    b.HasOne("SZZP2._2.Models.Status", "Statuses")
+                        .WithMany()
+                        .HasForeignKey("IDStatus")
+                        .OnDelete(DeleteBehavior.Cascade);
+
                     b.HasOne("SZZP2._2.Models.ADUser", "ADUsers")
                         .WithMany("Dismissals")
                         .HasForeignKey("NrSap");

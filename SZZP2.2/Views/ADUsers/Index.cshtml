@@ -4,48 +4,54 @@
     ViewData["Title"] = "Index";
 }
 
-<h2>Uzytkownicy Active Directory</h2>
+<div class="top-buffer"></div>
+<div class="panel panel-primary">
+    <div class="panel-heading panel-head">Użytkownicy Active Directory</div>
+    <div class="panel-body">
+        <table class="table table-striped table-responsive table-condensed">
+            <thead>
+                <tr style="font-size:13px" class="small text-left">
+                    <th>
+                        @Html.DisplayNameFor(model => model.NrSap)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Name)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Surname)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.DateEmployment)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.EndContract)
+                    </th>
 
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr style="font-size:13px" class="small text-left">
+                        <td>
+                            @Html.DisplayFor(modelItem => item.NrSap)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Name)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Surname)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.DateEmployment)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.EndContract)
+                        </td>
 
-<table class="table">
-    <thead>
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.Name)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Surname)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.DateEmployment)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.EndContract)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Office)
-            </th>
-        </tr>
-    </thead>
-    <tbody>
-@foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.Name)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Surname)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.DateEmployment)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.EndContract)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Office.IDOffice)
-            </td>
-        </tr>
-}
-    </tbody>
-</table>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>

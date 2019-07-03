@@ -17,7 +17,7 @@ namespace SZZP2._2.Data
         public DbSet<Dismissal> Dismissals { get; set; }
         public DbSet<Employment> Employments { get; set; }
         public DbSet<Office> Offices { get; set; }
-        public DbSet<Position> Positions { get; set; }  
+        public DbSet<Position> Positions { get; set; }
         public DbSet<Status> Statuses { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)

@@ -77,9 +77,9 @@
 
 
         $("#IDOffice").change(function () {
-            var url = '@Url.Action("GetDepartment", "Employments")';           
+            var url = '@Url.Action("GetDepartment", "Employments")';
             var id = $(this).val();
-                     
+
             $.getJSON(url, { IDOffice: id }, function (response) {
                 $("#IDDepartment").empty();
                 $.each(response, function (index, dep) {
